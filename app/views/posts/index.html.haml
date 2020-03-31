@@ -1,1 +1,35 @@
-aaaaaa
+.header
+  .header__inner
+    .header__inner--head
+      .logo
+        %img{src: "assets/logo.png"}
+      .search
+        %form{"accept-charset": "UTF-8", action: "#", method: "get"}
+          %input{name: "utf8", type: "hidden", value: "✓"}
+          %input.search__text{name: "key", placeholder: "キーワードから探す"}
+          %input.search__btn{src: "assets/icon-search 1.png", type: "image"}
+    .header__inner--foot
+      .lists
+        .lists__left
+          %a.lists__left--category(href="#")
+            カテゴリー
+          %a.lists__left--brand(href="#")
+            ブランド
+        .lists__right
+          %a.lists__right--login(href="#")
+            ログイン
+          %a.lists__right--sign-in(href="#")
+            新規会員登録
+
+.main
+  .top-visual
+  .introduction-first
+  .app-dl-first
+  .introduction-second
+  .pickup-category
+  .pickup-brand
+  .app-dl-second
+
+.sell-btn
+
+.footer
