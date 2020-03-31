@@ -17,9 +17,9 @@
 |introduction|text|-------|
 
 ### Association
--has_many :products, dependent: :destroy
--belongs_to :destination, dependent: :destroy
--belongs_to :card, dependent: :destroy
+- has_many :products, dependent: :destroy
+- belongs_to :destination, dependent: :destroy
+- belongs_to :card, dependent: :destroy
 
 
 ## destinationテーブル
@@ -48,7 +48,7 @@
 ### Association
 - belongs_to :user]
 
-## Categoryテーブル
+## Main_categoriesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
@@ -56,6 +56,7 @@
 ### Association
 - has_many :products
 
+※"ancestry"は、"gem ancestry"を使用するため
 
 ## productテーブル
 |Column|Type|Options|
@@ -74,16 +75,17 @@
 |user_id|integer|null: false, foreign_key: true|
 
 ### Association
--belongs_to :user, dependent: :destroy
--belongs_to :category, dependent: :destroy
--has_many :images, dependent: :destroy
--belongs_to_active_hash, :prefecture
+- belongs_to :user, dependent: :destroy
+- belongs_to :category, dependent: :destroy
+- has_many :images, dependent: :destroy
+- belongs_to_active_hash, :prefecture
 
 
-## imageテーブル
+## imagesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |image|string|null: false|
 |product_id|integer|null: false, foreign_key: true|
 ### Association
 - belongs_to :product
+
