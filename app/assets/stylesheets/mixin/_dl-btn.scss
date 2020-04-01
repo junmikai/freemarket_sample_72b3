@@ -1,0 +1,10 @@
+@mixin dlbtn {
+  &__btn {
+    &--a, &--g {
+      text-decoration: none;
+    }
+    &__img {
+      width: 180px;
+    }
+  }
+}
