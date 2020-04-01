@@ -31,16 +31,14 @@
         .main__contents__address__method 
           支払い方法
         .main__contents__address__link
-          %a{ href: '#' }
-            >>方法の選択
+          = link_to ">>方法の選択", "#"
 
       %hr/
       .main__contents__posts
         .main__contents__posts__shipping-address 
           配送先住所
         .main__contents__posts__method
-          %a{ href: '#' }
-            >>配送先の選択
+          = link_to ">>配送先の選択", "#"
         
       %hr/
       .main__contents__send
