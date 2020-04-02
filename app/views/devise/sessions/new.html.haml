@@ -25,7 +25,7 @@
 
         = f.email_field :email, autofocus: true, autocomplete: "email",placeholder:' メールアドレス',class:"mail_input"
         = f.password_field :password, autocomplete: "current-password",placeholder:' パスワード',class:"password_input"
-        %input{:type =>"submit", :value =>"ログアウト", :class =>"btn-icon"}/
+        %input{type: "submit", value:"ログアウト", class:"btn-icon"}/
         .main__box3__new
           = link_to "パスワードを忘れた場合", new_user_password_path
 
