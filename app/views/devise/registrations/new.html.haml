@@ -1,0 +1,56 @@
+.wraper
+  .signup
+    .registertitle
+      %h2 会員情報入力
+    .form
+      .form__group
+        %label ニックネーム
+        %span.formrequire 必須
+        %br
+        %input.form__group--input{:placeholder => "例) フリマ太郎", :type => "text"}/
+      .form__group
+        %label メールアドレス
+        %span.formrequire 必須
+        %br
+        %input.form__group--input{:placeholder => "PC・パソコンどちらも可", :type => "text"}/
+      .form__group
+        %label パスワード
+        %span.formrequire 必須
+        %br
+        %input.form__group--input{:placeholder => "7文字以上の半角英数字", :type => "text"}/
+        %p ※ 英字と数字の両方を含めて設定してください
+      .form__group
+        %label パスワード(確認)
+        %span.formrequire 必須
+        %br
+        %input.form__group--input{:placeholder => "7文字以上の半角英数字", :type => "text"}/
+      .form__image
+        ユーザー画像
+        %br
+        %label
+          = image_tag src="/assets/a001.png",:class => "form__image--circle", size: "150x150";
+          = icon('fas', 'camera')
+          %input{type: "file"}
+      .form__group
+        %label お名前(全角)
+        %span.formrequire 必須
+        %br
+        %input.form__group--inputleft{:placeholder => "例) 山田", :type => "text"}/
+        %input.form__group--inputright{:placeholder => "例) 太郎", :type => "text"}/
+      .form__group
+        %label ふりがな(ひらがな)
+        %span.formrequire 必須
+        %br
+        %input.form__group--inputleft{:placeholder => "例) やまだ", :type => "text"}/
+        %input.form__group--inputright{:placeholder => "例) たろう", :type => "text"}/
+      .form__group
+        %label 生年月日
+        %span.formrequire 必須
+        .form__group--birthday
+          = render "select"
+      .form__introduction
+        %label 自己紹介
+        %br
+        %textarea.form__introduction--text
+      .form__group
+        %button.form__group--btn 会員登録
