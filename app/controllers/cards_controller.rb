@@ -1,8 +1,4 @@
-class ProductsController < ApplicationController
-  
-  def show
-  end
-
+class CardsController < ApplicationController
   def new
   end
 
