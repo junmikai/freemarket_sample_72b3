@@ -27,17 +27,12 @@ body {
   width: 60vh;
   margin: 0 auto;
   background-color: white;
-  
-  
   &__box {
     width: 60vh;
     height: 25vh;
-    
-    
     &__have {
       text-align: center;
       padding: 40px 64px;
-      
       p {
         font-size: 14px;
       }
@@ -49,8 +44,6 @@ body {
           color: #fff;
           line-height: 7vh;
           text-decoration: none;
-          
-        
         }
         .main__box2__google-btn {
           display: block;
