@@ -6,14 +6,14 @@ body {
   position: relative;
   height: 150vh;
   width: 100%;
-  font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+  font-family: "Source Sans Pro", Helvetica, Arial, "游ゴシック体", "YuGothic", "メイリオ", "Meiryo", sans-serif;
   font-size: 14px;
   color: rgb(51, 51, 51);
   line-height: 1;
   background: rgb(245, 245, 245);
 }
 
-.header {
+.sessions-header {
   height: 13vh;
   width: 100%;
   text-align: center;
@@ -22,7 +22,7 @@ body {
     }
   }
 
-.main{
+.sessions-main{
   height: 100vh;
   width: 60vh;
   margin: 0 auto;
@@ -39,22 +39,13 @@ body {
         a {
           display: block;
           margin: 8px 0 0;
-          border: 1px solid #0099e8;
-          background: #0099e8;
+          border: 1px solid #3ccace;
+          background: #3ccace;
           color: #fff;
           line-height: 7vh;
           text-decoration: none;
         }
-        .main__box2__google-btn {
-          display: block;
-          margin: 8px 0 0;
-          border: 1px solid #0099e8;
-          background: #0099e8;
-          color: #fff;
-          line-height: 7vh;
-          text-decoration: none;
-          margin: 0, 20px;
-        }    
+        
     }
   }
   &__box1 {
@@ -76,13 +67,14 @@ body {
     &__google-btn {
       width: 305px;
       height: 50px;
-      
       line-height: 50px;
       margin: 0 auto;
-      border: 1px solid #385185; 
+      border: 1px solid #dd5144; 
+      background-color: #dd5144;
+      color: #fff;
     }
   }
-  &__box3{
+  &__box3 {
     width: 60vh;
     height: 50vh;
     text-align: center;
@@ -97,22 +89,22 @@ body {
   }
   .btn-icon {
     width: 300px;
-    background: #ea352d;
-    border: 1px solid #ea352d;
+    background: #3ccace;
+    border: 1px solid #3ccace;
     color: #fff;
     line-height: 7vh;
     text-decoration: none;
     margin-top: 30px;
   }
-.fotter {
-  width: 456px;
-  height: 25vh;
-  margin: 0 auto;
-  text-align: center;
-  h1 {
-    padding: 40px 0 0;
-  }
-}
+// .sessions-fotter {
+//   width: 456px;
+//   height: 25vh;
+//   margin: 0 auto;
+//   text-align: center;
+//   h1 {
+//     padding: 40px 0 0;
+//   }
+// }
 
 #user_email {
   height: 40px;
