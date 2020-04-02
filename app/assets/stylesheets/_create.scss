@@ -1,0 +1,233 @@
+.products {
+  background-color: #f8f8f8;
+  height: 100%;
+
+  &__logo {
+    background-color: #f8f8f8;
+    height: 100px;
+    text-align: center;
+    padding-top: 30px;
+  }
+  &__items {
+    margin:  0 auto; 
+    background-color: #ffffff;
+    width: 700px;
+    height: 100%;
+    .items__image { 
+      position: relative; 
+      height: 300px;
+      border:solid 1px #f8f8f8;
+      .image__name {
+        font-weight: bold;
+        float: left;
+        display: flex justify-content;
+        font-size: 13px;
+        margin: 22px 3px 0px 40px;
+      }
+      .image__required {
+        display: flex;
+        margin-top: 22px;
+        justify-content: center;
+        align-items: center;
+        color: #FFFFFF;
+        height: 18px;
+        width: 30px;
+        font-size: 12px;
+        background-color: #3CCACE;
+        border-radius: 3px 3px 3px 3px;
+      }
+      .image__upload {
+        padding: 25px 0px 0 40px;
+        font-size: 12px;
+      }
+      .image__picture {
+        position: relative;
+        padding-top: 30px;
+        left: 40px;
+        height: 150px;
+        width: 620px;
+        background-color: #f8f8f8;
+        border:dotted 1px #CCCCCC;
+        font-size: 20px;
+        justify-content: center;
+        text-align: center;
+        line-height: 10px;
+        &__sentence {
+          padding-top: 5px;
+          font-size: 12px;
+        }
+      }
+    }
+
+
+
+    .items__product {
+      height: 850px;
+      width: 700px;
+      background-color:#ffffff;
+      border:solid 1px #f8f8f8;
+      padding: 30px 40px 0px 40px;
+      position: relative;
+      .product__name {
+        font-weight: bold;
+        float: left;
+        font-size: 13px;
+        margin: 0px 3px 0px 0px;
+      }
+      .product__required{
+        display: flex;
+        margin-bottom: 12px;
+        justify-content: center;
+        align-items: center;
+        color: #FFFFFF;
+        height: 18px;
+        width: 30px;
+        font-size: 12px;
+        background-color: #3CCACE;;
+        border-radius: 3px 3px 3px 3px;
+      }
+
+      .product__goods {
+        padding: 12px 0 0 5px; 
+        height:50px;
+        border:solid 1px #CCCCCC;
+        border-radius: 5px 5px 5px 5px;
+      }
+      .product__description {
+        padding: 12px 0 0 5px; 
+        height:180px;
+        border:solid 1px #CCCCCC;
+        border-radius: 5px 5px 5px 5px; 
+      }
+      .product__category {
+        padding: 12px 0 0 5px; 
+        height:50px;
+        border:solid 1px #CCCCCC; 
+        border-radius: 5px 5px 5px 5px;
+      }
+      .product__size {
+        padding: 12px 0 0 5px; 
+        height:50px;
+        border:solid 1px #CCCCCC;
+        border-radius: 5px 5px 5px 5px; 
+      }
+      .product__status {
+        padding: 12px 0 0 5px; 
+        height:50px;
+        border:solid 1px #CCCCCC;
+        border-radius: 5px 5px 5px 5px; 
+      }
+  }
+  
+    .items__delivery {  
+      height: 450px;
+      border:solid 1px #f8f8f8; 
+      padding: 50px 40px 40px 40px;
+      .delivery__cost {
+        padding: 12px 0 0 5px; 
+        height:50px;
+        border:solid 1px #CCCCCC;
+        border-radius: 5px 5px 5px 5px;
+      }
+      .delivery__prefecture {
+        padding: 12px 0 0 5px; 
+        height:50px;
+        border:solid 1px #CCCCCC;
+        border-radius: 5px 5px 5px 5px;
+      }
+      .delivery__days {
+        padding: 12px 0 0 5px;  
+        height:50px;
+        border:solid 1px #CCCCCC;
+        border-radius: 5px 5px 5px 5px;
+      }
+      .delivery__name {
+        font-weight: bold;
+        float: left;
+        font-size: 13px;
+        margin: 0px 3px 0px 0px;
+      }
+      .delivery__required{
+        display: flex;
+        margin-bottom: 12px;
+        justify-content: center;
+        align-items: center;
+        color: #FFFFFF;
+        height: 18px;
+        width: 30px;
+        background-color: #3CCACE;;
+        font-size: 12px;
+        border-radius: 3px 3px 3px 3px;
+      }
+    }
+
+    .items__value {  
+      height: 400px;
+      border:solid 1px #f8f8f8; 
+      padding: 40px;
+
+      .value__prize {  
+        padding: 12px 0 0 5px;     
+        height:50px;
+        border:solid 1px #CCCCCC;
+        border-radius: 5px 5px 5px 5px;
+      }
+      .value__range { 
+        float: right;      
+        color: red;
+        }
+      .value__name {
+        font-weight: bold;
+        float: left;
+        font-size: 13px;
+        margin: 0px 3px 0px 0px;
+      }
+
+      .value__required{
+        display: flex;
+        margin-bottom: 12px;
+        justify-content: center;
+        align-items: center;
+        color: #FFFFFF;
+        height: 18px;
+        width: 30px;
+        background-color: #3CCACE;;
+        font-size: 12px;
+        border-radius: 3px 3px 3px 3px;
+      }
+      .value__commission {
+        font-size: 13px;
+        margin: 50px 0px 0px 0px;
+      }
+      .value__profit {
+        font-size: 13px;
+        margin: 40px 0px 0px 0px;
+      }
+      .value__judgment {
+        font-weight: bold;
+        padding-top: 10px;
+        color: #FFFFFF;
+        text-align: center;
+        background-color: #3CCACE;;
+        height:50px;
+        margin-top: 50px;
+        border:solid 1px #CCCCCC;
+        border-radius: 5px 5px 5px 5px;
+      }
+    }
+  }
+
+  &__footer {
+    display: flex;
+    justify-content: center;  
+    position: relative;
+    text-align: center;
+    height: 350px;
+    background-color: black;
+
+  }
+  .footer__logo {
+    position: absolute;
+    bottom: 30px;
+  }
+}
