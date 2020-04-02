@@ -1,0 +1,18 @@
+@mixin title {
+  text-align: center;
+  font-weight: bold;
+  font-size: 26px;
+  margin-bottom: 25px;
+  padding-bottom: 15px;
+  position: relative;
+  &::after {
+    content: "";
+    width: 70px;
+    height: 4px;
+    background-color: #3CCACE;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
