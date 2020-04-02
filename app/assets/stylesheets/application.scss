@@ -19,11 +19,17 @@
 @import "font-awesome";
 // @import "./mixin/dlbtn";
 // @import "./mixin/title";
-@import "top";
-@import "show";
-@import "new";
-@import "create";
-@import "modules/devise";
-@import "modules/signup";
 
+// @import "modules/tops/index";
+// @import "modules/destinations/new";
+// @import "modules/products/new";
+// @import "create";
+// @import "modules/destinations/new";
 
+@import "modules/users/devise";
+@import "modules/users/signup";
+
+@import "modules/destinations/new";
+@import "modules/products/new";
+@import "modules/products/show";
+@import "modules/tops/index";
