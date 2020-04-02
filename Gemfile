@@ -76,3 +76,5 @@ gem "font-awesome-sass"
 gem 'fog-aws'
 gem 'carrierwave'
 gem 'mini_magick'
+
+gem 'devise'
