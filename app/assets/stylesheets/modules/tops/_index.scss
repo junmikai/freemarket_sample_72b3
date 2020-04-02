@@ -168,7 +168,7 @@ body {
 
   .app-dl-first {
     &__background {
-      background-image:url(bg-topMiddleDl-pict.jpg);
+      background-image:image-url('bg-topMiddleDl-pict.jpg');
       width:100%;
       height:400px;
       background-size:cover;
@@ -299,7 +299,7 @@ body {
   }
   .app-dl-second {
     &__background {
-      background-image:url(bg-appBanner-pict.jpg);
+      background-image:image-url('bg-appBanner-pict.jpg');
       width:100%;
       height:340px;
       background-size: cover;
