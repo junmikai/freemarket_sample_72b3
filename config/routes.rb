@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   root 'tops#index'
   resources :products, only: [:show, :new]
   resources :destinations, only: [:new]
+  resources :users, only: [:index]
 end
