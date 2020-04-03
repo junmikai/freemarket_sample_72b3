@@ -1,21 +1,11 @@
 .destinations {
-  background-color: #f8f8f8;
   height: 100%;
-
-  &__logo {
-    background-color: #f8f8f8;
-    height: 100px;
-    text-align: center;
-    padding-top: 30px;
-  }
   &__input {
     margin:  0 auto; 
     background-color: #ffffff;
     width: 700px;
     height: 100%;
     .input__shippig { 
-      position: relative; 
-      margin: 0px 180px 0px 180px;
       .shippig__address {
       text-align: center;
       height: 50px;
