@@ -80,6 +80,28 @@
       .commentBox
         %button.commentBtn 
           購入する
+        .productcheck
+          購入内容の確認
+          .productcheck__item
+            .productcheck__item--image
+              = image_tag src="/assets/noimage.png", size: "150x90"
+            .productcheck__item--detail
+              
+              .productcheck__item--detail__name
+                商品名
+              .productcheck__item--detail__value
+                テックキャンプ転職コース
+          %hr/
+          .productcheck__value
+            .productcheck__value--pay 
+              支払い金額
+            .productcheck__value__money
+              ¥ 700,000（税込)
+          %hr/
+          .productcheckbtn
+            %button.commentBtn 
+              購入する
+          
 
     %ul.links
       %li<
