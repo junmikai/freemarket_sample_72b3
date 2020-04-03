@@ -1,4 +1,9 @@
 .wrapper
+
+  .header
+    .header__image
+      = image_tag src="/assets/logo.png", size: "185x49"
+
   .main
     .main__contents
       %h2.main__contents__head 
@@ -13,7 +18,7 @@
             商品名
           .main__contents__buy-item__detail__value
             ¥ （税込）送料込み
-            
+
       %hr/
       .main__contents__value
         .main__contents__value__pay 
@@ -22,57 +27,26 @@
           ¥ （税込）送料込み
 
       %hr/
+      .main__contents__address
+        .main__contents__address__method 
+          支払い方法
+        .main__contents__address__link
+          %a{ href: '#' }
+            >>方法の選択
+
+      %hr/
       .main__contents__posts
-        .destinations__input
-          .input__shippig
-            .shippig__address
-              発送元・お届け先住所入力
-            .shippig__form
-              %label お名前(全角)
-              %span.formrequire 必須
-              %br
-              %input.shippig__form--inputleft{placeholder: "例) 山田", type: "text"}/
-              %input.shippig__form--inputright{placeholder: "例) 太郎", type: "text"}/
-            .shippig__form
-              %label ふりがな(ひらがな)
-              %span.formrequire 必須
-              %br
-              %input.shippig__form--inputleft{placeholder: "例) やまだ", type: "text"}/
-              %input.shippig__form--inputright{placeholder: "例) たろう", type: "text"}/
-            .shippig__form
-              %label 郵便番号
-              %span.formrequire 必須
-              %br
-              %input.shippig__form--input{placeholder: "例) 000-0000", type: "text"}/
-            .shippig__form
-              %label 都道府県
-              %span.formrequire 必須
-              %br
-              %input.shippig__form--input{placeholder: "例) 東京都", type: "text"}/
-            .shippig__form
-              %label 市町村
-              %span.formrequire 必須
-              %br
-              %input.shippig__form--input{placeholder: "例) 渋谷区", type: "text"}/
-            .shippig__form
-              %label 市町村
-              %span.formrequire 必須
-              %br
-              %input.shippig__form--input{placeholder: "例) 道玄坂", type: "text"}/
-            .shippig__form
-              %label 番地
-              %span.formrequire 必須
-              %br
-              %input.shippig__form--input{placeholder: "例) 2-10-12", type: "text"}/
-            .shippig__form
-              %label 建物名
-              %span.formrequire 任意
-              %br
-              %input.shippig__form--input{placeholder: "例) 新大宗ビル3号館8F", type: "text"}/
-            .shippig__form
-              %label 電話番号
-              %span.formrequire 任意
-              %br
-              %input.shippig__form--input{placeholder: "例) 03-0000-0000", type: "text"}/
+        .main__contents__posts__shipping-address 
+          配送先住所
+        .main__contents__posts__method
+          %a{ href: '#' }
+            >>配送先の選択
+
+      %hr/
       .main__contents__send
       %input{:type => "submit", :value => "購入する", :class => "btn-icon"}/
+
+  .footer
+    .footer__image
+      = image_tag src="/assets/logo-white.png", size: "185x49"
+      %p Furima, Inc. 
