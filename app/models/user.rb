@@ -17,6 +17,8 @@ devise :database_authenticatable, :registerable,
   
         #  validates :family_name, format: { with: /^[ぁ-んァ-ヶー一-龠]+$/ }
 
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :validatable
 
   
 # 適用したらログイン機能が反映されないため一旦外してます
