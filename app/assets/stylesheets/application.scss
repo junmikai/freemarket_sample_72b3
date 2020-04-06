@@ -15,7 +15,6 @@
  */
 
 @import "reset";
-@import "config/colors";
 @import "font-awesome-sprockets";
 @import "font-awesome";
 // @import "./mixin/dlbtn";
@@ -29,9 +28,7 @@
 
 @import "modules/users/devise";
 @import "modules/users/signup";
-// @import "modules//flashs/flash";
 @import "modules/users/index";
-@import "modules/flash";
 
 
 @import "modules/destinations/new";
