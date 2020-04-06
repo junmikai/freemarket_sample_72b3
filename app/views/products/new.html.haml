@@ -3,62 +3,109 @@
     .logo
       =link_to image_tag('logo.png', size:"160x40"),root_path
   .products__items
-    .items__image
-      .image__name 出品画像
-      .image__required 必須
-      .image__upload 最大４枚までアップロードできます 
-      .image__picture 
-        .image__picture__btn 
-        = icon('fas', 'camera')
-        .image__picture__sentence
-          ドラックアンドドロップ 
-          %br またはクリックしてファイルをアップロード
+    = form_with(model: @product, local: true) do |f|
+      .items__image
+        .image__name 出品画像
+        .image__required 必須
+        .image__upload 最大４枚までアップロードできます 
+        .image__pictures
+          = f.fields_for :images, class: "" do |i|
+            .img-label
+              =i.label :image do
+                .image__picture
+                = i.file_field :image, class:""
+                .image__picture__btn 
+                  = icon('fas', 'camera')
+                .image__picture__sentence
+                  画像を登録する
+            .img-label
+              =i.label :image do
+                .image__picture
+                = i.file_field :image, class:""
+                .image__picture__btn 
+                  = icon('fas', 'camera')
+                .image__picture__sentence
+                  画像を登録する
+            .img-label
+              =i.label :image do
+                .image__picture
+                = i.file_field :image, class:""
+                .image__picture__btn 
+                  = icon('fas', 'camera')
+                .image__picture__sentence
+                  画像を登録する
+            .img-label
+              =i.label :image do
+                .image__picture
+                = i.file_field :image, class:""
+                .image__picture__btn 
+                  = icon('fas', 'camera')
+                .image__picture__sentence
+                  画像を登録する
+                
 
-    .items__product
-      .product__name 商品名
-      .product__required 必須
-      .product__goods 40文字まで
-      %br/
-      %br/
-      .product__name 商品の説明
-      .product__required 必須
-      .product__description 商品の説明(必須1000文字以内)
-      %br/
-      %br/
-      .product__name カテゴリー
-      .product__required 必須
-      .product__category 選択してください
-      %br/
-      %br/
-      .product__name 商品サイズ
-      .product__required 必須
-      .product__size 選択してください
-      %br/
-      %br/
-      .product__name 商品の状態
-      .product__required 必須
-      .product__status 選択してください
+                
+            -# .image__picture 
+            -#   .image__picture__btn 
+            -#   = icon('fas', 'camera')
+            -#   .image__picture__sentence
+            -#     画像を登録する
+            -# .image__picture 
+            -#   .image__picture__btn 
+            -#   = icon('fas', 'camera')
+            -#   .image__picture__sentence
+            -#     画像を登録する
+            -# .image__picture 
+            -#   .image__picture__btn 
+            -#   = icon('fas', 'camera')
+            -#   .image__picture__sentence
+            -#     画像を登録する
+          -# = form_with(model: [@product, @image], local: true) do |form|
+          -#   = f.label "画像をアップロード"
+          -#   %br/
+          -#   = f.file_field :image
 
-    .items__delivery
-      .delivery__name 配送料の負担
-      .delivery__required 必須
-      .delivery__cost 選択してください
-      %br/
-      %br/
-      .delivery__name 発送元の地域
-      .delivery__required 必須
-      .delivery__prefecture 選択してください
-      %br/
-      %br/
-      .delivery__name 発送までの日数
-      .delivery__required 必須
-      .delivery__days 選択してください
+      .items__product
+        .product__name 商品名
+        .product__required 必須
+        = f.text_field :name, placeholder: "40文字まで", class: "product__goods"
+        %br/
+        %br/
+        .product__name 商品の説明
+        .product__required 必須
+        = f.text_area :description, placeholder: "商品の説明(必須1000文字以内)", class: "product__description"
+        %br/
+        %br/
+        .product__name カテゴリー
+        .product__required 必須
+        .product__category 選択してください
+        %br/
+        %br/
 
-    .items__value
-      .value__name 販売価格
-      .value__required 必須
-      .value__prize 入力してください
-      .value__range 価格（¥300〜9,999,999）
-      .value__commission 販売手数料（10%）
-      .value__profit 販売利益
-      .value__judgment 出品する
+        .product__name 商品の状態
+        .product__required 必須
+        = f.select :status, [["選択してください", 1], ['新品、未使用', 2], ['未使用に近い', 3], ["目立った傷や汚れなし", 4], ["やや傷や汚れあり", 5], ["傷や汚れあり", 6], ["全体的に状態が悪い", 7]], {selected: 1}, {class: "product__status"}
+        
+
+      .items__delivery
+        .delivery__name 配送料の負担
+        .delivery__required 必須
+        = f.select :shipping_cost, [["選択してください", 1], ['送料込み(出品者負担)', 2], ['着払い(購入者負担)', 3]], {selected: 1}, {class: "delivery__cost"}
+        %br/
+        %br/
+        .delivery__name 発送元の地域
+        .delivery__required 必須
+        .delivery__prefecture 選択してください
+        %br/
+        %br/
+        .delivery__name 発送までの日数
+        .delivery__required 必須
+        = f.select :shipping_days, [["選択してください", 1], ['1~2日で発送', 2], ['2~3日で発送', 3], ["4~7日で発送", 4]], {selected: 1}, {class: "delivery__days"}
+
+      .items__value
+        .value__name 販売価格
+        .value__required 必須
+        = f.text_field :price, placeholder: "入力してください", class: "value__prize"
+        .value__commission 販売手数料（10%）
+        .value__profit 販売利益
+        = f.submit root_path, value:"出品する",  class: "value__judgment"
