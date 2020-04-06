@@ -55,6 +55,18 @@ ActiveRecord::Schema.define(version: 2020_04_02_064105) do
     t.string "prefecture_id"
     t.integer "category_id"
     t.integer "user_id"
+    t.string "name", null: false
+    t.string "price", null: false
+    t.string "description", null: false
+    t.string "status", null: false
+    t.string "size", null: false
+    t.string "shipping_cost", null: false
+    t.string "shipping_days", null: false
+    t.string "prefecture_id", null: false
+    t.string "judgment"
+    t.integer "category_id", null: false
+    t.integer "shipping_id", null: false
+    t.integer "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -62,6 +74,14 @@ ActiveRecord::Schema.define(version: 2020_04_02_064105) do
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "nickname", null: false
     t.string "email", default: "", null: false
+    t.string "family_name", null: false
+    t.string "first_name", null: false
+    t.string "family_name_kana", null: false
+    t.string "first_name_kana", null: false
+    t.date "birth_day", null: false
+    t.text "introduction"
+    t.string "user_image"
+
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"

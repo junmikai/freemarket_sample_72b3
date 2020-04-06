@@ -6,14 +6,14 @@
         .itemBox__body
           %ul
             %li<
-              = image_tag src="/assets/a001.png"
+              = image_tag src="a001.png"
               %ul
                 %li<
-                  = image_tag src="/assets/a002.png",size: "75x75"
+                  = image_tag src="a002.png",size: "75x75"
                 %li<
-                  = image_tag src="/assets/a003.png",size: "75x75"
+                  = image_tag src="a003.png",size: "75x75"
                 %li<
-                  = image_tag src="/assets/a004.png",size: "75x75"
+                  = image_tag src="a004.png",size: "75x75"
 
         .itemBox__price
           %span ¥10000
@@ -80,6 +80,26 @@
       .commentBox
         %button.commentBtn 
           購入する
+        .productcheck
+          購入内容の確認
+          .productcheck__item
+            = image_tag src="noimage.png"
+            .productcheck__item--detail
+              .productcheck__item--detail__name
+                商品名
+              .productcheck__item--detail__name
+                テックキャンプ転職コース
+              %hr/
+            .productcheck__item--detail
+              .productcheck__item--detail__name
+                支払い金額
+              .productcheck__item--detail__name
+                ¥ 700,000（税込)
+              %hr/
+            .productcheckbtn
+              %button.commentBtn 
+                購入する
+          
 
     %ul.links
       %li<
