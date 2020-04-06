@@ -5,14 +5,10 @@ devise :database_authenticatable, :registerable,
       :recoverable, :rememberable, :validatable,
       :validatable, password_length: 7..20
   # validates :password_length, length: {minimum: 7}
-  validates :nickname, :first_name_kana,:family_name_kana,:first_name,:family_name,presence: true
+  
   validates :email, uniqueness: true
   validates :first_name_kana, :family_name_kana, format: { with: /\A[ァ-ヶー－]+\z/ }
   validates :first_name, :family_name, format: { with: /\A[ぁ-んァ-ン一-龥]/ }
-  
-  
-
-
   
   
         #  validates :family_name, format: { with: /^[ぁ-んァ-ヶー一-龠]+$/ }
