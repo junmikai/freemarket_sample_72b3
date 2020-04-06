@@ -3,7 +3,7 @@
     .logo
       =link_to image_tag('logo.png', size:"160x40"),root_path
   .products__items
-    = form_with(model: @product, local: true) do |f|
+    = form_for @product do |f|
       .items__image
         .image__name 出品画像
         .image__required 必須
