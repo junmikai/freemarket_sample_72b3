@@ -1,56 +1,64 @@
-.wraper
-  .signup
-    .registertitle
-      %h2 会員情報入力
-    .form
-      .form__group
-        %label ニックネーム
-        %span.formrequire 必須
-        %br
-        %input.form__group--input{placeholder: "例) フリマ太郎", type: "text"}/
-      .form__group
-        %label メールアドレス
-        %span.formrequire 必須
-        %br
-        %input.form__group--input{placeholder: "PC・パソコンどちらも可", type: "text"}/
-      .form__group
-        %label パスワード
-        %span.formrequire 必須
-        %br
-        %input.form__group--input{placeholder: "7文字以上の半角英数字", type: "text"}/
-        %p ※ 英字と数字の両方を含めて設定してください
-      .form__group
-        %label パスワード(確認)
-        %span.formrequire 必須
-        %br
-        %input.form__group--input{placeholder: "7文字以上の半角英数字", type: "text"}/
-      .form__image
-        ユーザー画像
-        %br
+
+.warapper
+  %h2.warapper__log 会員情報登録
+
+  .feilds
+    = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+      = devise_error_messages!
+
+      %hr/
+      .field
+        = f.label :ニックネーム
+        %span.form_require
+          必須
+        %br/
+        = f.text_field :nickname, placeholder: "例) メルカリ太郎"
+
+      .field
+        = f.label :メールアドレス
+        %span.form_require
+          必須
+          %br/
+        = f.email_field :email, autofocus: true, autocomplete: "email",placeholder:"PC・携帯どちらでも可"
+
+      .field
+        = f.label :パスワード
+        - if @minimum_password_length
+          %em
+            (#{@minimum_password_length} characters minimum)
+        %br/
+        = f.password_field :password, placeholder: "7文字以上の半角英数字"
+        %br/
+        ※ 英字と数字の両方を含めて設定してください
+        %br/
+        %br/
+        %br/
         %label
-          = image_tag src="/assets/a001.png",class: "form__image--circle", size: "150x150";
-          = icon('fas', 'camera')
-          %input{type: "file"}
-      .form__group
-        %label お名前(全角)
-        %span.formrequire 必須
-        %br
-        %input.form__group--inputleft{placeholder: "例) 山田", type: "text"}/
-        %input.form__group--inputright{placeholder: "例) 太郎", type: "text"}/
-      .form__group
-        %label ふりがな(ひらがな)
-        %span.formrequire 必須
-        %br
-        %input.form__group--inputleft{placeholder: "例) やまだ", type: "text"}/
-        %input.form__group--inputright{placeholder: "例) たろう", type: "text"}/
-      .form__group
-        %label 生年月日
-        %span.formrequire 必須
-        .form__group--birthday
-          = render "select"
-      .form__introduction
-        %label 自己紹介
-        %br
-        %textarea.form__introduction--text
-      .form__group
-        %button.form__group--btn 会員登録
+          お名前(全角)
+        %span.form_require
+          必須
+        %br/
+        .fieldname
+          .form_flex
+            = f.text_field :family_name, placeholder: "例) 山田"
+            = f.text_field :first_name, placeholder: "例) 彩"
+        
+
+        %label
+          お名前カナ(全角)
+        %span.form_require
+          必須
+        %br/
+        .fieldname
+          .form_flex
+            = f.text_field :family_name_kana, placeholder: "例) ヤマダ"
+            = f.text_field :first_name_kana, placeholder: "例) アヤ"
+        
+      
+        .field
+          = f.label :birth_date
+          %br/
+          = f.date_select :birth_day, use_month_numbers: true,start_year: 1930, end_year: (Time.now.year - 10), default: Date.new(1989, 1, 1)
+
+        .actions
+          = f.submit "フリマを始める", class: "btn"
