@@ -11,33 +11,33 @@
         .image__pictures
           = f.fields_for :images, class: "" do |i|
             .img-label
-              =i.label :image do
+              =i.label :image1 do
                 .image__picture
-                = i.file_field :image, class:""
+                = i.file_field :image1, class:""
                 .image__picture__btn 
                   = icon('fas', 'camera')
                 .image__picture__sentence
                   画像を登録する
             .img-label
-              =i.label :image do
+              =i.label :image2 do
                 .image__picture
-                = i.file_field :image, class:""
+                = i.file_field :image2, class:""
                 .image__picture__btn 
                   = icon('fas', 'camera')
                 .image__picture__sentence
                   画像を登録する
             .img-label
-              =i.label :image do
+              =i.label :image3 do
                 .image__picture
-                = i.file_field :image, class:""
+                = i.file_field :image3, class:""
                 .image__picture__btn 
                   = icon('fas', 'camera')
                 .image__picture__sentence
                   画像を登録する
             .img-label
-              =i.label :image do
+              =i.label :image4 do
                 .image__picture
-                = i.file_field :image, class:""
+                = i.file_field :image4, class:""
                 .image__picture__btn 
                   = icon('fas', 'camera')
                 .image__picture__sentence
