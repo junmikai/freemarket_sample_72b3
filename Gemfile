@@ -79,4 +79,5 @@ gem 'mini_magick'
 
 gem 'devise'
 gem 'active_hash'
+gem 'pry-rails'
 gem 'jquery-rails'
