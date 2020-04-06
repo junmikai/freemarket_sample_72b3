@@ -79,6 +79,7 @@
         .product__name カテゴリー
         .product__required 必須
         .product__category 選択してください
+        = f.collection_select :category_id, Category.all, :id, :name
         %br/
         %br/
 
