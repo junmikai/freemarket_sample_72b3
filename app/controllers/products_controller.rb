@@ -11,12 +11,12 @@ class ProductsController < ApplicationController
   def create
     # binding.pry
     @product = Product.create(product_params)
-
-    redirect_to :root
-    # if @product.save
-    #   flash[:success] = "商品を出品しました！"
-    #   redirect_to :root
-    # end
+    if @product.save
+      redirect_to :root
+      flash[:notice] = "商品を出品しました！"
+    else
+      redirect_to new_product_path
+    end
   end
 
   def edit
@@ -27,6 +27,6 @@ class ProductsController < ApplicationController
 
   private
   def product_params
-    params.require(:product).permit(:name, :price, :description, :status, :shipping_cost, :shipping_days, :category_id, :prefecture_id, images_attributes: {image: []})
+    params.require(:product).permit(:name, :price, :description, :status, :shipping_cost, :shipping_days, :category_id, :prefecture_id, :distination_id, images_attributes: {image: []})
   end
 end
