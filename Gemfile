@@ -84,4 +84,6 @@ gem 'devise'
 gem 'active_hash'
 gem 'pry-rails'
 gem 'jquery-rails'
+gem 'ancestry'
 gem 'rails-i18n'
+
