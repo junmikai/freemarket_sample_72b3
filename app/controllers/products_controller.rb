@@ -15,8 +15,9 @@ class ProductsController < ApplicationController
       redirect_to :root
       flash[:notice] = "商品を出品しました！"
     else
-      redirect_to new_product_path
+      redirect_to new_product_path, flash: { error: @product.errors.full_messages }
     end
+    
   end
 
   def edit
