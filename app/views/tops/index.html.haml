@@ -111,9 +111,9 @@
           %h3.title__text 新規投稿商品
 
       .productLists 
-        = @products.each do |product|
+        - @products.each do |product|
           = link_to "#", class: "productList" do
-            = image_tag @images.to_s,class: "productList--img"
+            -# = image_tag product.images.image,class: "productList--img"
             .productList--body
               %h3.name 
                 = product.name

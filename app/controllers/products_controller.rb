@@ -9,8 +9,8 @@ class ProductsController < ApplicationController
   end
 
   def create
-    # binding.pry
     @product = Product.create(product_params)
+    binding.pry
     if @product.save
       redirect_to :root
       flash[:notice] = "商品を出品しました！"
