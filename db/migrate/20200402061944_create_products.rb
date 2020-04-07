@@ -12,7 +12,7 @@ class CreateProducts < ActiveRecord::Migration[5.2]
       t.integer :destination_id, foreign_key: true
       # t.string  :judgment
       # t.integer :shipping_id, foreign_key: true
-      t.integer :user_id, foreign_key: true
+      t.integer :user_id,foreign_key: true
       t.timestamps
     end
   end
