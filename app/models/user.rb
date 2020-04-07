@@ -11,7 +11,7 @@ devise :database_authenticatable, :registerable,
   validates :first_name, :family_name, format: { with: /\A[ぁ-んァ-ン一-龥]/ }
   
   
-
+  has_many :products, dependent: :destroy
 
   
   
@@ -20,7 +20,7 @@ devise :database_authenticatable, :registerable,
 
   
 # 適用したらログイン機能が反映されないため一旦外してます
-  # has_many :products, dependent: :destroy
+  
   # belongs_to :destination, dependent: :destroy
   # belongs_to :card, dependent: :destroy
 end
