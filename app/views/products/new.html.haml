@@ -11,9 +11,9 @@
         .image__pictures
           = f.fields_for :images, class: "" do |i|
             .img-label
-              =i.label :image1 do
+              =i.label :image do
                 .image__picture
-                = i.file_field :image1, class:""
+                = i.file_field :image, multiple: true
                 .image__picture__btn 
                   = icon('fas', 'camera')
                 .image__picture__sentence
