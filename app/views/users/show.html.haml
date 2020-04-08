@@ -18,27 +18,29 @@
         .userdata__key
           ニックネーム
         .userdata__value
-          フリマ次郎
+          = @user.nickname
       .userdata
         .userdata__key
           メールアドレス
         .userdata__value
-          tarou@furima.co.jp 
+          = @user.email
       .userdata
         .userdata__key
           お名前
         .userdata__value
-          山田 太郎
+          = @user.family_name
+          = @user.first_name
       .userdata
         .userdata__key
           ふりがな(ひらがな)
         .userdata__value
-          やまだ たろう
+          = @user.family_name_kana
+          = @user.first_name_kana
       .userdata
         .userdata__key
           生年月日
         .userdata__value
-          2000年4月1日
+          = @user.birth_day
       .userdata
         .userdata__key
           自己紹介
