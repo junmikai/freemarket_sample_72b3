@@ -51,7 +51,8 @@
         %br/
         .product__name カテゴリー
         .product__required 必須
-        = f.collection_select :category_id, Category.all, :id, :name
+        -# = f.collection_select :category_id, Category.all, :id, :name
+        = f.select :category, @category_parent_array, {}, {class: 'listing-select-wrapper__box--select', id: 'parent_category'}
         %br/
         %br/
 
