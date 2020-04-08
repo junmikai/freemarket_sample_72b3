@@ -113,7 +113,9 @@
       .productLists 
         - @products.each do |product|
           = link_to "#", class: "productList" do
-            -# = image_tag product.images.image,class: "productList--img"
+            - product.images.each do |image|
+              .productList--img
+                = image_tag image.image.url
             .productList--body
               %h3.name 
                 = product.name
