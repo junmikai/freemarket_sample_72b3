@@ -6,5 +6,5 @@ Rails.application.routes.draw do
     resources :images, only: [:create]
   end
   resources :destinations, only: [:new, :show]
-  resources :users, only: [:index]
+  resources :users, only: [:show]
 end
