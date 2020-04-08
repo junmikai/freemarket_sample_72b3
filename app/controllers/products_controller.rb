@@ -10,7 +10,6 @@ class ProductsController < ApplicationController
   end
 
   def create
-    # binding.pry
     @product = Product.create(product_params)
     if @product.save
       redirect_to :root
