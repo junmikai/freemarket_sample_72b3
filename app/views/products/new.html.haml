@@ -51,8 +51,15 @@
         %br/
         .product__name カテゴリー
         .product__required 必須
+        .listing-form-box
+          .listing-product-detail__category
+            .listing-select-wrapper
+              .listing-select-wrapper__box
+                //親カテゴリーのセレクトボックスの生成
+                = f.select :category, @category_parent_array, {}, {class: 'listing-select-wrapper__box--select', id: 'parent_category'}
+                %i.fas.fa-chevron-down.listing-select-wrapper__box--arrow-down
         -# = f.collection_select :category_id, Category.all, :id, :name
-        = f.select :category, @category_parent_array, {}, {class: 'listing-select-wrapper__box--select', id: 'parent_category'}
+
         %br/
         %br/
 
