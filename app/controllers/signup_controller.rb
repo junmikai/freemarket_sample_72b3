@@ -28,19 +28,6 @@ class SignupController < ApplicationController
       else
         redirect_to action: "create"
       end
-
-
-
-      # if card_params=token_submit
-      #   @card.save
-      #   redirect_to root_path
-      # else
-      #   redirect_to action: "create"
-      # end
-
-
     end
-  
- 
-
+    
 end
