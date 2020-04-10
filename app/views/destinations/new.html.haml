@@ -1,46 +1,85 @@
-.wrapper
-  .header
-    .header__image
-      = image_tag src="/assets/logo.png", size: "185x49"
+.destinations
+  .destinations__logo
+    .logo
+      =link_to image_tag('logo.png', size:"160x40"),root_path
 
-  .main
-    .main__contents
-      %h2.main__contents__head 
-        購入内容の確認
+  .destinations__input
+    = form_for @destination do |f|
+  
+      .input__shippig
+        .shippig__address
+          発送元・お届け先住所入力
+        .shippig__name
+          お名前
+        .shippig__required 
+          必須
+        -# .shippig__family
+        = f.text_field :family_name, placeholder: "例）山田", class: "shippig__family"
+        = f.text_field :first_name, placeholder: "例）花子", class: "shippig__first"
+        
+        %br/
+        .shippig__name 
+          お名前カナ
+        .shippig__required 
+          必須
+        
+        = f.text_field :family_name_kana, placeholder: "例）ヤマダ", class: "shippig__family"
+        = f.text_field :first_name_kana, placeholder: "例）ハナコ", class: "shippig__first"
+        
+          
+        %br/
+        .shippig__name 
+          郵便番号
+        .shippig__required 
+          必須
+        = f.text_field :post_code, placeholder: "例）123-4567", class: "shippig__family"
+        
+          
+        %br/ 
+        .shippig__name 
+          都道府県
+        .shippig__required 
+          必須
+        = f.collection_select :prefecture, Prefecture.all, :id, :name, class: "shippig__family"
+        
+        %br/ 
+        .shippig__name 
+          市区町村
+        .shippig__required 
+          必須
+        
+        
+        = f.text_field :city, placeholder: "例）横浜市緑区", class: "shippig__family"
+        
+          
+        %br/ 
+        .shippig__name 
+          番地
+        .shippig__required 
+          必須
+        = f.text_field :address, placeholder: "青山1-1-1", class: "shippig__family"
+        
+        %br/ 
+        .shippig__name 
+          建物例
+        .shippig__any
+          任意
+        = f.text_field :building_name, placeholder: "例）柳ビル103", class: "shippig__family"
+        
+    
+        %br/ 
+        .shippig__name 
+          電話
+        .shippig__any 
+          任意
+        = f.text_field :phone_number, placeholder: "例）090-1234-5678 ", class: "shippig__family"
+        %br/
 
-      %hr/
-      .main__contents__buy-item
-        .main__contents__buy-item__image
-          = image_tag src="/assets/noimage.png", size: "150x90"
-        .main__contents__buy-item__detail
-          .main__contents__buy-item__detail__name
-            商品名
-          .main__contents__buy-item__detail__value
-            ¥ （税込）送料込み
+        = f.submit value:"登録する" ,class: "shippig__judgment"
 
-      %hr/
-      .main__contents__value
-        .main__contents__value__pay 
-          支払い金額
-        .main__contents__value__money
-          ¥ （税込）送料込み
+        %br/
+        -# .shippig__judgment
+        -#   登録する
+        -# %br/ 
 
-      %hr/
-      .main__contents__address
-        .main__contents__address__method 
-          支払い方法
-        .main__contents__address__link
-          %a{ href: '#' }
-            >>方法の選択
-
-      %hr/
-      .main__contents__posts
-        .main__contents__posts__shipping-address 
-          配送先住所
-        .main__contents__posts__method
-          %a{ href: '#' }
-            >>配送先の選択
-
-      %hr/
-      .main__contents__send
-      %input{:type => "submit", :value => "購入する", :class => "btn-icon"}/
+      

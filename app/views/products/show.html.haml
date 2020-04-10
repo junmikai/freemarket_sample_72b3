@@ -84,7 +84,7 @@
               = link_to '削除', "#", method: :delete, class: "productbtn--destroy"
         - else
           %button.commentBtn 
-            購入する
+            = link_to '購入する', buy_products_path, class:"commentBtn"
           .productcheck
             購入内容の確認
             .productcheck__item

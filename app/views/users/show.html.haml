@@ -2,13 +2,14 @@
   .mypage
     .useredit
       %ul
-        %li<
-          = link_to "#" do
-            基本情報変更
-        %li<
+        %li
+          = link_to '基本情報登録', new_destination_path
+        %li  
+          = link_to '基本情報変更', destination_path
+        %li
           = link_to "#" do
             クレジット情報
-        %li<
+        %li
           = link_to "#" do
             ログアウト
     .mypage__title
