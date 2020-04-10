@@ -34,14 +34,14 @@ $(document).on('turbolinks:load', ()=> {
 
 
 
-// $(function(){
-//   $('.commentBtn').on('click', function(){
-//     $(".productcheck").show()
-//  });
-// })
+$(function(){
+  $('.commentBtn').on('click', function(){
+    $(".productcheck").show()
+ });
+})
 
-// $(function(){
-//   $('.productcheck').on('mouseleave', function(){
-//     $(this).hide()
-//  });
-// })
+$(function(){
+  $('.productcheck').on('mouseleave', function(){
+    $(this).hide()
+ });
+})
