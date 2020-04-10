@@ -26,7 +26,7 @@ class SignupController < ApplicationController
       if @card.save
         redirect_to root_path
       else
-        redirect_to action: "create"
+        redirect_to step4_signup_index_path 
       end
     end
     
