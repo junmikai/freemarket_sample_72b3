@@ -5,7 +5,7 @@ class DestinationsController < ApplicationController
   end
 
   def create
-    @destination = Destination.create(destination_params)
+    @destination = Destination.new(destination_params)
     if @destination.save
       redirect_to destination_path(@destination.id)
       flash[:notice] = "情報を登録しました"
