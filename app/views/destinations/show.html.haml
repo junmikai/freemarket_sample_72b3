@@ -1,70 +1,68 @@
-.destinations
-  .destinations__logo
-    .logo
-      =link_to image_tag('logo.png', size:"160x40"),root_path
-  .destinations__input
-    .input__shippig
-      .shippig__address
-        発送元・お届け先住所入力
-      .shippig__name 
-        お名前
-      .shippig__required 
-        必須
-      .shippig__family
-        例）山田
-      .shippig__first
-        例）花子
-      %br/
-      .shippig__name 
-        お名前カナ
-      .shippig__required 
-        必須
-      .shippig__family
-        例）ヤマダ
-      .shippig__first
-        例）ハナコ
-      %br/
-      .shippig__name 
-        郵便番号
-      .shippig__required 
-        必須
-      .shippig__family
-        例）123-4567
-      %br/ 
-      .shippig__name 
-        都道府県
-      .shippig__required 
-        必須
-      .shippig__family
-        = link_to ">>選択してください", "#"
-      %br/ 
-      .shippig__name 
-        市区町村
-      .shippig__required 
-        必須
-      .shippig__family
-        例）横浜市緑区
-      %br/ 
-      .shippig__name 
-        番地
-      .shippig__required 
-        必須
-      .shippig__family
-        例）青山1-1-1
-      %br/ 
-      .shippig__name 
-        建物例
-      .shippig__any
-        任意
-      .shippig__family
-        例）柳ビル103
-      %br/ 
-      .shippig__name 
-        電話
-      .shippig__any 
-        任意
-      .shippig__family
-        例）090-1234-5678 
-      .shippig__judgment
-        登録する
-      %br/ 
+.wraper
+  .mypage
+    .useredit
+      %ul
+        %li
+          = link_to '基本情報登録', new_destination_path
+        %li  
+          = link_to "#" do
+            お届け先
+        %li
+          = link_to "#" do
+            クレジット情報
+        %li
+          = link_to "#" do
+            ログアウト
+    .mypage__title
+      マイページ
+    .userdatas
+      .userdata
+        .userdata__key
+          お名前
+        .userdata__value
+          = @destination.family_name 
+          = @destination.first_name 
+      .userdata
+        .userdata__key
+          お名前カナ
+        .userdata__value
+          = @destination.family_name_kana
+          = @destination.first_name_kana
+      .userdata
+        .userdata__key
+          郵便番号
+        .userdata__value
+          = @destination.post_code 
+      .userdata
+        .userdata__key
+          都道府県
+        .userdata__value
+          = @destination.prefecture.name
+      .userdata
+        .userdata__key
+          市区町村
+        .userdata__value
+          = @destination.city 
+      .userdata
+        .userdata__key
+          番地
+        .userdata__value
+          = @destination.address  
+      .userdata
+        .userdata__key
+          建物
+        .userdata__value
+          = @destination.building_name
+
+      .userdata
+        .userdata__key
+          電話
+        .userdata__value
+          = @destination.phone_number
+
+        = link_to '編集', edit_destination_path
+        
+
+
+    
+          

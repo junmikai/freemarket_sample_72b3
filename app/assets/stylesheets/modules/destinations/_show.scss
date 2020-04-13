@@ -1,75 +1,53 @@
-.destinations {
-  height: 100%;
-  &__input {
-    margin:  0 auto; 
-    background-color: #ffffff;
-    width: 700px;
-    height: 100%;
-    .input__shippig { 
-      .shippig__address {
+* {
+  box-sizing: border-box;
+  padding:0;
+  margin:0;
+}
+
+body{
+  display: block;
+  background: #f8f8f8;
+  font-family:"Source Sans Pro", Helvetica, Arial, "游ゴシック体", "YuGothic", "メイリオ", "Meiryo", sans-serif;
+  font-weight: 600;
+}
+
+
+.wraper{
+  .mypage{
+    margin: 100px auto;
+    width:700px;
+    height:1050px;
+    background-color:#ffff;
+    .useredit ul{
+      display:flex;
+      justify-content: space-between;
+      list-style: none;
+      li{
+        a{
+          text-decoration: none;
+          color:#3CCACE;
+          font-size:18px;
+        }
+      }
+    }
+    &__title{
+    font-size:30px;
+    text-align: center;
+    padding-top:50px;
+    border-bottom: 1px solid #f5f5f5;
+    }
+    .userdatas{
+      margin-top:30px;
       text-align: center;
-      height: 50px;
-      padding-top: 10px;
-      font-size: 20px;
-      font-weight: bold;
-      }
-      .shippig__name {
-        font-weight: bold;
-        float: left;
-        display: flex justify-content;
-        font-size: 13px;
-        margin: 22px 3px 10px 0px;
-      }
-      .shippig__required {
-        display: flex;
-        margin-top: 22px;
-        justify-content: center;
-        align-items: center;
-        color: #FFFFFF;
-        height: 18px;
-        width: 30px;
-        font-size: 12px;
-        background-color: #3CCACE;
-        border-radius: 3px 3px 3px 3px;
-      }
-      .shippig__family {
-        height:50px;
-        margin: 5px 0px 0 0;
-        padding: 10px 0px 0 5px;
-        border:solid 1px #CCCCCC;
-        border-radius: 5px 5px 5px 5px;
-        color: #888888;
-      }
-      .shippig__first {
-        height:50px;
-        margin: 30px 0px 0 0;
-        padding: 10px 0px 0 5px;
-        border:solid 1px #CCCCCC;
-        border-radius: 5px 5px 5px 5px;
-        color: #888888;
-      }
-      .shippig__any {
-        display: flex;
-        margin-top: 22px;
-        justify-content: center;
-        align-items: center;
-        color: #FFFFFF;
-        height: 18px;
-        width: 30px;
-        font-size: 12px;
-        background-color: #AAAAAA;
-        border-radius: 3px 3px 3px 3px;
-      }
-      .shippig__judgment {
-        font-weight: bold;
-        padding-top: 10px;
-        color: #FFFFFF;
-        text-align: center;
-        background-color: #3CCACE;;
-        height:50px;
-        margin-top: 50px;
-        border:solid 1px #CCCCCC;
-        border-radius: 5px 5px 5px 5px;
+      .userdata{
+        height:80px;
+        margin-top:30px;
+        &__key{
+          font-size:20px;
+          margin-bottom:10px;
+          border-bottom: 3px solid #3CCACE;
+          display: inline-block;
+        }
       }
     }
   }

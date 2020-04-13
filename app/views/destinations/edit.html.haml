@@ -13,7 +13,6 @@
           お名前
         .shippig__required 
           必須
-        -# .shippig__family
         = f.text_field :family_name, placeholder: "例）山田", class: "shippig__family"
         = f.text_field :first_name, placeholder: "例）花子", class: "shippig__first"
         
@@ -75,11 +74,6 @@
         = f.text_field :phone_number, placeholder: "例）090-1234-5678 ", class: "shippig__family"
         %br/
 
-        = f.submit value:"登録する" ,class: "shippig__judgment"
+        = f.submit value:"編集する" ,class: "shippig__judgment"
 
         %br/
-        -# .shippig__judgment
-        -#   登録する
-        -# %br/ 
-
-      
