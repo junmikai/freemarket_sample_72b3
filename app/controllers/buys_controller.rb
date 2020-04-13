@@ -1,5 +1,5 @@
 class BuysController < ApplicationController
-  before_action :set_product, only: [:edit, :update
+  before_action :set_product, only: [:edit, :update]
   def edit
   end
   def update
