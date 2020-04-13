@@ -3,17 +3,14 @@ class BuysController < ApplicationController
     @product = Product.find(params[:id])
   end
   def update
-    # binding.pry
     @product = Product.find(params[:id])
     @product.update(destination_id: current_user.id)
-    redirect_to :root
-    # if @product.update( destination_id: current_user.id)
-    #   redirect_to :root
-    #   flash[:notice] = "商品を購入しました！"
-    # else
-    #   render "buy_edit", flash: { error: @product.errors.full_messages }
-    # end
-    # @destination = Destination.find(params[:id])
+    if @product.save
+      redirect_to :root
+      flash[:notice] = "商品を購入しました！"
+    else
+      render "buy_edit", flash: { error: @product.errors.full_messages }
+    end
   end
 
   private
