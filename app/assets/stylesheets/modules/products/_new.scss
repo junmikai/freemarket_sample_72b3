@@ -1,6 +1,23 @@
+@mixin product_form {
+  padding: 0 0 0 5px; 
+  width: 100%;
+  border:solid 1px #CCCCCC;
+  border-radius: 5px;
+  background-color: white;
+}
+@mixin delivery_form {
+  padding: 12px 0 0 5px; 
+  height:50px;
+  border:solid 1px #CCCCCC;
+  border-radius: 5px;
+  width: 100%;
+  background-color: white;
+}
+$form_height:50px;
+
 .products {
   background-color: #f8f8f8;
-
+  font-weight: normal;
   &__logo {
     background-color: #f8f8f8;
     height: 100px;
@@ -33,7 +50,7 @@
         width: 30px;
         font-size: 12px;
         background-color: #3CCACE;
-        border-radius: 3px 3px 3px 3px;
+        border-radius: 3px;
       }
       .image__upload {
         padding: 25px 0px 0 40px;
@@ -109,33 +126,25 @@
         width: 30px;
         font-size: 12px;
         background-color: #3CCACE;;
-        border-radius: 3px 3px 3px 3px;
+        border-radius: 3px;
       }
 
       .product__goods {
-        padding: 0 0 0 5px; 
-        height:50px;
-        border:solid 1px #CCCCCC;
-        border-radius: 5px 5px 5px 5px;
+        height: $form_height;
+        @include product_form
       }
       .product__description {
-        padding: 12px 0 0 5px; 
-        height:180px;
-        border:solid 1px #CCCCCC;
-        border-radius: 5px 5px 5px 5px; 
+        height: 180px;
+        @include product_form
       }
-      .product__category {
-        padding: 12px 0 0 5px; 
-        height:50px;
-        border:solid 1px #CCCCCC; 
-        border-radius: 5px 5px 5px 5px;
+      .listing-select-wrapper__box--select {
+        height: $form_height;
+        @include product_form
       }
       
       .product__status {
-        padding: 12px 0 0 5px; 
-        height:50px;
-        border:solid 1px #CCCCCC;
-        border-radius: 5px 5px 5px 5px; 
+        height: $form_height;
+        @include product_form
       }
   }
   
@@ -144,22 +153,13 @@
       border:solid 1px #f8f8f8; 
       padding: 50px 40px 40px 40px;
       .delivery__cost {
-        padding: 12px 0 0 5px; 
-        height:50px;
-        border:solid 1px #CCCCCC;
-        border-radius: 5px 5px 5px 5px;
+        @include delivery_form
       }
-      .delivery__prefecture {
-        padding: 12px 0 0 5px; 
-        height:50px;
-        border:solid 1px #CCCCCC;
-        border-radius: 5px 5px 5px 5px;
+      select {
+        @include delivery_form
       }
       .delivery__days {
-        padding: 12px 0 0 5px;  
-        height:50px;
-        border:solid 1px #CCCCCC;
-        border-radius: 5px 5px 5px 5px;
+        @include delivery_form
       }
       .delivery__name {
         font-weight: bold;
@@ -177,7 +177,7 @@
         width: 30px;
         background-color: #3CCACE;;
         font-size: 12px;
-        border-radius: 3px 3px 3px 3px;
+        border-radius: 3px;
       }
     }
 
@@ -185,12 +185,13 @@
       height: 400px;
       border:solid 1px #f8f8f8; 
       padding: 40px;
-
       .value__prize {  
-        padding: 0 0 0 5px;     
-        height:50px;
+        width: 600px;
+        height: $form_height;
+        padding: 0 0 0 5px; 
         border:solid 1px #CCCCCC;
-        border-radius: 5px 5px 5px 5px;
+        border-radius: 5px;
+        background-color: white;
       }
       .value__name {
         font-weight: bold;
@@ -209,26 +210,18 @@
         width: 30px;
         background-color: #3CCACE;;
         font-size: 12px;
-        border-radius: 3px 3px 3px 3px;
-      }
-      .value__commission {
-        font-size: 13px;
-        margin: 50px 0px 0px 0px;
-      }
-      .value__profit {
-        font-size: 13px;
-        margin: 40px 0px 0px 0px;
+        border-radius: 3px;
       }
       .value__judgment {
         font-weight: bold;
-        padding-top: 10px;
         color: #FFFFFF;
         text-align: center;
-        background-color: #3CCACE;;
+        background-color: #3CCACE;
         height:50px;
-        margin-top: 50px;
-        border:solid 1px #CCCCCC;
-        border-radius: 5px 5px 5px 5px;
+        margin: 50px 120px;
+        border:solid 1px #3CCACE;
+        border-radius: 5px;
+        width: 360px;
       }
     }
   }

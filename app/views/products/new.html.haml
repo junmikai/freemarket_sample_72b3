@@ -34,8 +34,6 @@
         -#         .image__picture__sentence
         -#           画像を登録する
 
-                "
-
                 
             
       .items__product
@@ -60,10 +58,8 @@
                 -# = f.select :category, @category_parent_array, {}, {class: 'listing-select-wrapper__box--select', id: 'parent_category'}
                 %i.fas.fa-chevron-down.listing-select-wrapper__box--arrow-down
                 -# = f.collection_select :category_id, Category.all, :id, :name
-
         %br/
         %br/
-
         .product__name 商品の状態
         .product__required 必須
         = f.select :status, [['新品、未使用'], ['未使用に近い'], ["目立った傷や汚れなし"], ["やや傷や汚れあり"], ["傷や汚れあり"], ["全体的に状態が悪い"]], {selected: 1}, {class: "product__status"}
@@ -87,9 +83,8 @@
       .items__value
         .value__name 販売価格
         .value__required 必須
+        ￥
         = f.text_field :price, placeholder: "入力してください", class: "value__prize"
-        .value__commission 販売手数料（10%）
-        .value__profit 販売利益
         = f.submit root_path, value:"出品する",  class: "value__judgment"
       
 
