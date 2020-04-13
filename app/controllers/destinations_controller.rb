@@ -17,14 +17,25 @@ class DestinationsController < ApplicationController
   end
   def show
     @destination = Destination.find(params[:id])
+    
+  end
+  def edit 
+    @destination = Destination.find(params[:id])
   end
 
-  def destroy
+
+  def update
+    @destination = Destination.find(params[:id])
+    if @destination.update_attributes(destination_params)
+      redirect_to :root
+    else
+      render action: :edit
+    end
   end
 
   private 
   def destination_params
-      params.require(:destination).permit(:family_name, :first_name, :family_name_kana, :first_name_kana, :post_code, :prefecture, :city, :address, :building_name, :phone_number).merge(user_id: current_user.id)
+      params.require(:destination).permit(:family_name, :first_name, :family_name_kana, :first_name_kana, :post_code, :prefecture_id, :city, :address, :building_name, :phone_number).merge(user_id: current_user.id)
   end
 end
 

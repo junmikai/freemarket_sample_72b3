@@ -15,6 +15,6 @@ Rails.application.routes.draw do
   resources :products do
     resources :images, only: [:create]
   end
-  resources :destinations, only: [:new, :create, :show]
+  resources :destinations, only: [:new, :create, :show, :edit, :update]
   resources :users, only: [:show]
 end
