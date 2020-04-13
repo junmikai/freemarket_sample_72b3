@@ -10,7 +10,7 @@ devise :database_authenticatable, :registerable,
   validates :first_name, :family_name, format: { with: /\A[ぁ-んァ-ン一-龥]/ }
   
   has_many :products, dependent: :destroy
-  belongs_to :destination, dependent: :destroy
-  belongs_to :card, dependent: :destroy
+  has_one :destination, dependent: :destroy
+  has_one :card, dependent: :destroy
 
 end

@@ -76,7 +76,6 @@ ActiveRecord::Schema.define(version: 2020_04_02_064105) do
     t.date "birth_day", null: false
     t.text "introduction"
     t.string "user_image"
-    t.string "card_id"
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
