@@ -197,7 +197,8 @@
           = link_to "#", class: "inner__btn--__g" do
             = image_tag "http://furima.tokyo/assets/google-play-469c63f1269e456307c4dde176b33cc3bbbbf142ac4d7369656010130149db1a.svg", class: "inner__btn__img"
           
-= link_to new_product_path, class: "sell-btn" do
-  %span.sell-btn__text 出品する
-  = image_tag "icon_camera.png",class: "sell-btn__icon"
+- if user_signed_in? 
+  = link_to new_product_path, class: "sell-btn" do
+    %span.sell-btn__text 出品する
+    = image_tag "icon_camera.png",class: "sell-btn__icon"
 
