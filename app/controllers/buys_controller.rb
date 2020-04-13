@@ -1,11 +1,9 @@
 class BuysController < ApplicationController
+  before_action :set_product, only: [:edit, :update
   def edit
-    @product = Product.find(params[:id])
   end
   def update
-    @product = Product.find(params[:id])
-    @product.update(destination_id: current_user.id)
-    if @product.save
+    if @product.update(destination_id: current_user.id)
       redirect_to :root
       flash[:notice] = "商品を購入しました！"
     else
@@ -13,6 +11,9 @@ class BuysController < ApplicationController
     end
   end
 
+  def set_product
+    @product = Product.find(params[:id])
+  end
   private
   def product_params
     params.require(:product).permit(:name, :price, :description, :status, :shipping_cost, :shipping_days, :category_id, :prefecture_id, :distination_id, images_attributes:[:image]).merge(user_id: current_user.id)
