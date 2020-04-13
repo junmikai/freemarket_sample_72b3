@@ -81,7 +81,7 @@
             %li
               = link_to '編集', "#", method: :get, class: "productbtn--edit"
             %li
-              = link_to '削除', "#", method: :delete, class: "productbtn--destroy"
+              = link_to '削除', product_path(@product), method: :delete, class: "productbtn--destroy"
         - else
           %button.commentBtn 
             = link_to '購入する', edit_buy_path(@product.id), class:"commentBtn"

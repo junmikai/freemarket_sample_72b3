@@ -1,0 +1,76 @@
+* {
+  box-sizing: border-box;
+  padding:0;
+  margin:0;
+}
+
+body{
+  display: block;
+  background: #f8f8f8;
+  font-family:"Source Sans Pro", Helvetica, Arial, "游ゴシック体", "YuGothic", "メイリオ", "Meiryo", sans-serif;
+  font-weight: 600;
+}
+
+
+.session_wrapper{
+  
+  .form__require{
+    margin-bottom: 12px;
+    color: #FFFFFF;
+    height: 18px;
+    width: 30px;
+    background-color: #3CCACE;;
+    font-size: 25px;
+    border-radius: 3px 3px 3px 3px;
+  }
+  .single_container{
+    margin: 100px auto;
+    width:700px;
+    height:800px;
+    background-color:#ffff;
+    .session__main{
+    font-size:30px;
+    text-align: center;
+    padding-top:50px;
+    border-bottom: 1px solid #f5f5f5;
+    }
+    .session__main__container__formGroup{
+      margin-top:30px;
+      text-align: center;
+      .session__main__container__formGroup__sub{
+        display: flex;
+        justify-content: center;
+        letter-spacing:5px;
+        .input__default{
+          margin-top:30px;
+        }
+      .fa-cc-visa{
+        color:rgb(26, 31, 113)
+      }
+      .fa-cc-mastercard{
+        color: rgb(204, 0, 0);
+      }
+      .fa-cc-jcb{
+        color: rgb(204, 0, 0);
+      }
+      .fa-cc-discover{
+        color:orange;
+      }
+     .fa-cc-amex{
+      color:blue;
+        }
+      }
+    }
+    .btn_mail{
+      margin-top:100px;
+      font-size: 18px;
+      line-height: 48px;
+      background: #3CCACE;
+      border: 1px solid #3CCACE;
+      color: #fff;
+      width: 60%;
+      font-size: 18px;
+      border-radius: 100px;
+    }
+  }
+}

@@ -13,8 +13,12 @@
 ActiveRecord::Schema.define(version: 2020_04_02_064105) do
 
   create_table "cards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.string "customer_id", null: false
+    t.string "card_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_cards_on_user_id"
   end
 
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -72,6 +76,7 @@ ActiveRecord::Schema.define(version: 2020_04_02_064105) do
     t.date "birth_day", null: false
     t.text "introduction"
     t.string "user_image"
+    t.string "card_id"
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
@@ -82,4 +87,5 @@ ActiveRecord::Schema.define(version: 2020_04_02_064105) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "cards", "users"
 end
