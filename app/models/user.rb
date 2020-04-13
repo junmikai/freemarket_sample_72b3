@@ -21,6 +21,6 @@ devise :database_authenticatable, :registerable,
   
 # 適用したらログイン機能が反映されないため一旦外してます
   
-  # belongs_to :destination, dependent: :destroy
-  # belongs_to :card, dependent: :destroy
+  belongs_to :destination, dependent: :destroy
+  belongs_to :card, dependent: :destroy
 end

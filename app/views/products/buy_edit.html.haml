@@ -1,0 +1,80 @@
+.wrapper
+  .header
+    .header__image
+      = image_tag src="/assets/logo.png", size: "185x49"
+
+  .main
+    .main__contents
+      %h2.main__contents__head 
+        購入内容の確認
+
+      %hr/
+      .main__contents__buy-item
+        .main__contents__buy-item__image
+          = image_tag @product.images[0].image.url, size: "150x90"
+        .main__contents__buy-item__detail
+          .main__contents__buy-item__detail__name
+            = @product.name
+          .main__contents__buy-item__detail__value
+            ¥ 
+            = @product.price
+            （税込）送料込み
+
+      %hr/
+      .main__contents__value
+        .main__contents__value__pay 
+          支払い金額
+        .main__contents__value__money
+          ¥ 
+          = @product.price
+          （税込）送料込み
+
+      %hr/
+      .main__contents__address
+        - if current_user.card == true
+          .main__contents__address__method 
+            支払い方法
+            %br/
+            -# Cardのデータ取得の記述！！
+            クレジットカード
+            ************0000
+            有効期限 12 / 24
+            -# ！！
+            = link_to "#", class: "main__contents__address__link" do
+              >>変更する
+        - else
+          .main__contents__address__method 
+            支払い方法
+            %br/
+          .main__contents__address__method
+            = link_to "#", class: "main__contents__address__link" do
+              >>クレジットカードを登録する
+
+      %hr/
+      .main__contents__posts
+        - if current_user.destination == true
+          .main__contents__posts__shipping-address 
+            配送先住所
+            -# = @destination.post_code
+            -# %br/
+            -# = @destination.prefecture
+            -# = @destination.city
+            -# = @destination.address
+            -# = @destination.building_name
+            -# %br/
+            -# = @destination.family_name 
+            -# = @destination.first_name
+          .main__contents__posts__method
+            = link_to "#", class: "main__contents__address__link" do
+              >>変更する
+        - else
+          .main__contents__posts__shipping-address 
+            配送先住所
+          .main__contents__posts__method
+            = link_to "#", class: "main__contents__address__link" do
+              >>配送先の登録
+
+      %hr/
+      .main__contents__send
+      = form_for @product do |f|
+        = f.submit value: "購入する", class: "btn-icon"
