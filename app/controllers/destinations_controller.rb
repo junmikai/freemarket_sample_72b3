@@ -10,7 +10,8 @@ class DestinationsController < ApplicationController
       redirect_to destination_path(@destination.id)
       flash[:notice] = "情報を登録しました"
     else
-      render :new, flash: { error: @destination.errors.full_messages }
+      redirect_to new_destination_path, flash: { error: @destination.errors.full_messages }
+
     end
   end
 

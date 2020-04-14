@@ -36,8 +36,8 @@
             支払い方法
             %br/
           = "************4242"
-          = link_to link_to signup_index_path, class: "main__contents__address__link" do
-            >>変更する
+          = link_to signup_path, class: "main__contents__address__link" do
+            >>確認する
         - else
           .main__contents__address__method 
             支払い方法
@@ -73,7 +73,7 @@
             = link_to new_destination_path, class: "main__contents__address__link" do
               >>配送先の登録
 
-      - if current_user.card
+      - if current_user.card and current_user.destination 
         %hr/
         .main__contents__send
         = form_for @product, :url => {controller: "buys", action: "update"} do |f|
