@@ -1,11 +1,14 @@
 .destinations {
-  height: 100%;
+  font-weight: normal;
+  width: 100%;
+  text-align: center;
   &__input {
     margin:  0 auto; 
     background-color: #ffffff;
     width: 700px;
     height: 100%;
     .input__shippig { 
+      padding: 90px;
       .shippig__address {
       text-align: center;
       height: 50px;
@@ -30,23 +33,29 @@
         width: 30px;
         font-size: 12px;
         background-color: #3CCACE;
-        border-radius: 3px 3px 3px 3px;
+        border-radius: 3px;
       }
-      .shippig__family {
+      .shippig__form {
         height:50px;
+        width: 100%;
         margin: 5px 0px 0 0;
         padding: 10px 0px 0 5px;
         border:solid 1px #CCCCCC;
-        border-radius: 5px 5px 5px 5px;
-        color: #888888;
+        border-radius: 5px;
       }
-      .shippig__first {
+      .shippig__nameFormInput {
         height:50px;
         margin: 30px 0px 0 0;
         padding: 10px 0px 0 5px;
         border:solid 1px #CCCCCC;
-        border-radius: 5px 5px 5px 5px;
-        color: #888888;
+        border-radius: 5px;
+        width: 255px;
+      }
+      select {
+        width: 100%;
+        height:50px;
+        background-color: white;
+        border:solid 1px #CCCCCC;
       }
       .shippig__any {
         display: flex;
@@ -58,19 +67,23 @@
         width: 30px;
         font-size: 12px;
         background-color: #AAAAAA;
-        border-radius: 3px 3px 3px 3px;
+        border-radius: 3px;
       }
       .shippig__judgment {
         font-weight: bold;
         padding-top: 10px;
         color: #FFFFFF;
         text-align: center;
-        background-color: #3CCACE;;
+        background-color: #3CCACE;
         height:50px;
+        width: 360px;
         margin-top: 50px;
-        border:solid 1px #CCCCCC;
-        border-radius: 5px 5px 5px 5px;
+        border:solid 1px #3CCACE;
+        border-radius: 5px;
       }
     }
+  }
+  &__logo {
+    padding:20px 0;
   }
 }

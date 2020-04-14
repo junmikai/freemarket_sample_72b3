@@ -1,20 +1,13 @@
 .wraper
+  .side-bar
+    %ul
+      %li
+        = link_to "マイページへ戻る", user_path(current_user), class: "Lists__right--btn"
   .mypage
-    .useredit
-      %ul
-        %li
-          = link_to '基本情報登録', new_destination_path
-        %li  
-          = link_to "#" do
-            お届け先
-        %li
-          = link_to "#" do
-            クレジット情報
-        %li
-          = link_to "#" do
-            ログアウト
     .mypage__title
-      マイページ
+      .mypage__title--text
+        お届け先
+      = link_to 'お届け先住所変更', edit_destination_path, class: "mypage__title--edit"
     .userdatas
       .userdata
         .userdata__key
@@ -59,10 +52,3 @@
           電話
         .userdata__value
           = @destination.phone_number
-
-        = link_to '編集', edit_destination_path
-        
-
-
-    
-          
