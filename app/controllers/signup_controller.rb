@@ -26,7 +26,7 @@ class SignupController < ApplicationController
         redirect_to root_path
         flash[:notice] = "クレジットカード登録しました！"
       else
-        redirect_to step4_signup_index_path 
+        redirect_to signup_index_path 
       end
     end
 
