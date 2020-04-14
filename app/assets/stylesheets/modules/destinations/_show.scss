@@ -1,54 +1,55 @@
-* {
-  box-sizing: border-box;
-  padding:0;
-  margin:0;
-}
+// * {
+//   box-sizing: border-box;
+//   padding:0;
+//   margin:0;
+// }
 
-body{
-  display: block;
-  background: #f8f8f8;
-  font-family:"Source Sans Pro", Helvetica, Arial, "游ゴシック体", "YuGothic", "メイリオ", "Meiryo", sans-serif;
-  font-weight: 600;
-}
+// body{
+//   display: block;
+//   background: #f8f8f8;
+//   font-family:"Source Sans Pro", Helvetica, Arial, "游ゴシック体", "YuGothic", "メイリオ", "Meiryo", sans-serif;
+//   font-weight: 600;
+// }
 
 
-.wraper{
-  .mypage{
-    margin: 100px auto;
-    width:700px;
-    height:1050px;
-    background-color:#ffff;
-    .useredit ul{
-      display:flex;
-      justify-content: space-between;
-      list-style: none;
-      li{
-        a{
-          text-decoration: none;
-          color:#3CCACE;
-          font-size:18px;
-        }
-      }
-    }
-    &__title{
-    font-size:30px;
-    text-align: center;
-    padding-top:50px;
-    border-bottom: 1px solid #f5f5f5;
-    }
-    .userdatas{
-      margin-top:30px;
-      text-align: center;
-      .userdata{
-        height:80px;
-        margin-top:30px;
-        &__key{
-          font-size:20px;
-          margin-bottom:10px;
-          border-bottom: 3px solid #3CCACE;
-          display: inline-block;
-        }
-      }
-    }
-  }
-}
+// .wraper{
+//   padding: 100px;
+//   .mypage{
+//     margin: auto;
+//     width:700px;
+//     height:800px;
+//     background-color:#ffff;
+//     .useredit ul{
+//       display:flex;
+//       justify-content: space-between;
+//       list-style: none;
+//       li{
+//         a{
+//           text-decoration: none;
+//           color:#3CCACE;
+//           font-size:18px;
+//         }
+//       }
+//     }
+//     &__title{
+//     font-size:30px;
+//     text-align: center;
+//     padding-top:50px;
+//     border-bottom: 1px solid #f5f5f5;
+//     }
+//     .userdatas{
+//       margin-top:30px;
+//       text-align: center;
+//       .userdata{
+//         height:80px;
+//         margin-top:30px;
+//         &__key{
+//           font-size:20px;
+//           margin-bottom:10px;
+//           border-bottom: 3px solid #3CCACE;
+//           display: inline-block;
+//         }
+//       }
+//     }
+//   }
+// }

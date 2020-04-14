@@ -1,10 +1,12 @@
 .wraper
-  .mypage
-    .useredit
-      %ul
-        %li
-          = link_to '基本情報登録', new_destination_path
+  .side-bar
+    %ul
+      - if current_user.destination
         %li  
+          = link_to "お届け先住所", destination_path
+      - else
+        %li  
+
           = link_to '基本情報変更', destination_path
         %li
           = link_to signup_index_path do
@@ -13,6 +15,15 @@
           = link_to "#" do
             ログアウト
     .mypage__title
+
+          = link_to 'お届け先住所登録', new_destination_path
+      %li
+        = link_to "クレジット情報", step4_signup_index_path
+      %li
+        = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "Lists__right--btn"
+  .mypage
+    .mypage__title--text
+
       マイページ
     .userdatas
       .userdata
