@@ -30,8 +30,8 @@ class SignupController < ApplicationController
     end
 
 
-    def destroy #PayjpとCardデータベースを削除します
-      card = Card.where(user_id: current_user.id).first
+    def destroy 
+      card = Card.find_by(user_id: current_user.id)
       if card.blank?
       else
         Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
@@ -42,8 +42,8 @@ class SignupController < ApplicationController
       redirect_to root_path
     end
   
-    def show #Cardのデータpayjpに送り情報を取り出します
-      card = Card.where(user_id: current_user.id).first
+    def show 
+      card = Card.find_by(user_id: current_user.id)
       if card.blank?
         redirect_to root_path
       else
