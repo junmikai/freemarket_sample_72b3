@@ -53,3 +53,13 @@
               = f.text_field "cvc", class: "input__default cvc", placeholder: "カード背面3桁の番号", type: "text"
               .session__main__container__formGroup#card_token
                 = f.submit "次へ進む", class: "btn_default btn_mail", id: "token_submit"
+
+
+  
+        = form_tag(step4_signup_index_path, method: :delete, id: 'charge-form',  name: "inputForm") do
+          %input{ type: "hidden", name: "card_id", value: "" }
+          %button 削除する
+
+        -# = form_tag(step4_signup_index_path, method: :post, id: 'charge-form',  name: "inputForm") do
+        -#   %input{ type: "hidden", name: "card_id", value: "" }
+        -#   %button 削除する

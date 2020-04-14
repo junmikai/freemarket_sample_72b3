@@ -2,7 +2,6 @@ class SignupController < ApplicationController
   require 'payjp'
 
   def create
-    
     @user = User.new()
 
     if @user.save
@@ -15,7 +14,7 @@ class SignupController < ApplicationController
     token = Payjp::Token.create({ card: card_params }, x_payjp_direct_token_generate: true)
 
     customer = Payjp::Customer.create(card: token.id)
-    Payjp::Charge.create(amount: 2000, customer: customer.id, currency: 'jpy')
+    # Payjp::Charge.create(amount: 2000, customer: customer.id, currency: 'jpy')
 
       @card = Card.new(                  
         user_id: current_user.id,       
@@ -25,9 +24,17 @@ class SignupController < ApplicationController
 
       if @card.save
         redirect_to root_path
+        flash[:notice] = "クレジットカード登録しました！"
       else
         redirect_to step4_signup_index_path 
       end
+    end
+
+
+
+    def destroy
+    card = Card.find(params[:id])
+    redirect_to root_path
     end
     
 end
