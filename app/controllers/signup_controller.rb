@@ -24,6 +24,7 @@ class SignupController < ApplicationController
       )
 
       if @card.save
+        flash[:notice] = "クレジットカード情報を登録しました！"
         redirect_to root_path
       else
         redirect_to signup_index_path 
@@ -35,6 +36,7 @@ class SignupController < ApplicationController
       @customer.delete
       @card.delete
       redirect_to root_path
+      flash[:notice] = "クレジットカード情報を削除しました！"
     end
   
 
@@ -45,7 +47,8 @@ class SignupController < ApplicationController
       @card = Card.find_by(user_id: current_user.id)
       Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
       @customer = Payjp::Customer.retrieve(@card.customer_id)
+      
     end
 
-    
+
   end
