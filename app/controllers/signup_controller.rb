@@ -33,10 +33,12 @@ class SignupController < ApplicationController
 
 
     def destroy 
-      @customer.delete
-      @card.delete
-      redirect_to root_path
+      if @card.delete
       flash[:notice] = "クレジットカード情報を削除しました！"
+      redirect_to root_path
+      else
+        redirect_to signup_show_path
+      end
     end
   
 
