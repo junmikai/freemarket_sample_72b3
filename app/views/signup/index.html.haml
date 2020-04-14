@@ -52,4 +52,6 @@
                 %span.form__require 必須
               = f.text_field "cvc", class: "input__default cvc", placeholder: "カード背面3桁の番号", type: "text"
               .session__main__container__formGroup#card_token
+
                 = f.submit "次へ進む", class: "btn_default btn_mail", id: "token_submit"
+

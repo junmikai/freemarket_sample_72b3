@@ -43,6 +43,7 @@ class ProductsController < ApplicationController
   def edit
   end
 
+
   def destroy
     @product.destroy
     redirect_to root_path

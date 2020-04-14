@@ -1,9 +1,19 @@
 class BuysController < ApplicationController
   before_action :set_product, only: [:edit, :update]
   def edit
+    @user = User.find(params[:id])
+    @destination = Destination.find(params[:id])
   end
+  
   def update
     if @product.update(destination_id: current_user.id)
+
+      Payjp.api_key = ENV['PAYJP_PRIVATE_KEY'] 
+      card_params = { number: '4242424242424242', cvc: '123', exp_month: '1', exp_year: '2022' }
+      token = Payjp::Token.create({ card: card_params }, x_payjp_direct_token_generate: true)
+      customer = Payjp::Customer.create(card: token.id)
+      Payjp::Charge.create(amount: @product.price, customer: customer.id, currency: 'jpy')
+
       redirect_to :root
       flash[:notice] = "商品を購入しました！"
     else
