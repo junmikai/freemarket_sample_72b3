@@ -1,4 +1,5 @@
 class SignupController < ApplicationController
+  before_action :set_card, only: [:destroy, :show]
   require 'payjp'
 
   def create
@@ -14,7 +15,7 @@ class SignupController < ApplicationController
     token = Payjp::Token.create({ card: card_params }, x_payjp_direct_token_generate: true)
 
     customer = Payjp::Customer.create(card: token.id)
-    # Payjp::Charge.create(amount: 2000, customer: customer.id, currency: 'jpy')
+    Payjp::Charge.create(amount: 2000, customer: customer.id, currency: 'jpy')
 
       @card = Card.new(                  
         user_id: current_user.id,       
@@ -22,19 +23,33 @@ class SignupController < ApplicationController
         card_id: customer.default_card   
       )
 
-      if @card.save
-        redirect_to root_path
-        flash[:notice] = "クレジットカード登録しました！"
-      else
-        redirect_to signup_index_path 
-      end
+    if @card.save
+      flash[:notice] = "クレジットカード情報を登録しました！"
+      redirect_to root_path
+    else
+      redirect_to signup_index_path 
     end
+  end
 
 
-
-    def destroy
-    card = Card.find(params[:id])
-    redirect_to root_path
+  def destroy 
+    if @card.delete
+      flash[:notice] = "クレジットカード情報を削除しました！"
+      redirect_to root_path
+    else
+      redirect_to signup_show_path
     end
-    
+  end
+  
+
+  def show 
+  end
+
+  def set_card
+    @card = Card.find_by(user_id: current_user.id)
+    Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
+    @customer = Payjp::Customer.retrieve(@card.customer_id)
+  end
+
+
 end

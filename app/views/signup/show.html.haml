@@ -1,0 +1,16 @@
+.mypage
+  カード番号
+  %br
+  4242424242424242
+  %br
+  有効期限
+  %br
+  2020年12月
+  %br
+  CVC
+  %br
+  123
+
+  = form_tag(signup_path, method: :DELETE, id: 'charge-form',  name: "inputForm") do
+    %input{ type: "hidden", name: "card_id", value: "" }
+    %button 削除する
