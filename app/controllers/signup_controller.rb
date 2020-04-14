@@ -23,34 +23,33 @@ class SignupController < ApplicationController
         card_id: customer.default_card   
       )
 
-      if @card.save
-        flash[:notice] = "クレジットカード情報を登録しました！"
-        redirect_to root_path
-      else
-        redirect_to signup_index_path 
-      end
+    if @card.save
+      flash[:notice] = "クレジットカード情報を登録しました！"
+      redirect_to root_path
+    else
+      redirect_to signup_index_path 
     end
+  end
 
 
-    def destroy 
-      if @card.delete
-        flash[:notice] = "クレジットカード情報を削除しました！"
-        redirect_to root_path
-      else
-        redirect_to signup_show_path
-      end
+  def destroy 
+    if @card.delete
+      flash[:notice] = "クレジットカード情報を削除しました！"
+      redirect_to root_path
+    else
+      redirect_to signup_show_path
     end
+  end
   
 
-    def show 
-    end
-
-    def set_card
-      @card = Card.find_by(user_id: current_user.id)
-      Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
-      @customer = Payjp::Customer.retrieve(@card.customer_id)
-      
-    end
-
-
+  def show 
   end
+
+  def set_card
+    @card = Card.find_by(user_id: current_user.id)
+    Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
+    @customer = Payjp::Customer.retrieve(@card.customer_id)
+  end
+
+
+end
