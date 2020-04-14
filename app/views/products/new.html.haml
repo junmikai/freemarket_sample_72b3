@@ -12,29 +12,6 @@
         = f.fields_for :images do |image|
           .js-file_group{"data-index" => "#{image.index}"}
             = image.file_field :image, class: 'js-file'
-
-
-
-
-
-
-
-
-        -# .image__name 出品画像
-        -# .image__required 必須
-        -# .image__upload 最大４枚までアップロードできます 
-        -# .image__pictures
-        -#   = f.fields_for :images do |i|
-        -#     .img-label
-        -#       =i.label :image do
-        -#         .image__picture
-        -#         = i.file_field :image
-        -#         .image__picture__btn 
-        -#           = icon('fas', 'camera')
-        -#         .image__picture__sentence
-        -#           画像を登録する
-
-                
             
       .items__product
         .product__name 商品名

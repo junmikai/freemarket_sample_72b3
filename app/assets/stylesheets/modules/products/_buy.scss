@@ -53,7 +53,10 @@ html {
         @include contentStyle;
       }
 
-
+      .main__contents__posts__shipping-address {
+        padding-left:200px;
+        line-height : 1.5;
+      }
 
       .shippig__form{
         height:50px;
