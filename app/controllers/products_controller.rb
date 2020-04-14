@@ -16,6 +16,32 @@ class ProductsController < ApplicationController
       end
   end
 
+  def edit
+    
+    @product = Product.find(params[:id])
+
+    grandchild_category = @product.category
+    child_category = grandchild_category.parent
+
+
+    @category_parent_array = []
+    Category.where(ancestry: nil).each do |parent|
+      @category_parent_array << parent
+    end
+    
+    # @category_children_array = []
+    # # binding.pry
+    # Category.where(ancestry: child_category.siblings).each do |children|
+    #   @category_children_array << children
+    # end
+
+    # @category_grandchildren_array = []
+    # Category.where(ancestry: child_category.subtree).each do |grandchildren|
+    #   @category_grandchildren_array << grandchildren
+    # end
+    
+  end
+
   def get_category_children
     #選択された親カテゴリーに紐付く子カテゴリーの配列を取得
     @category_children = Category.find_by(id: "#{params[:parent_name]}", ancestry: nil).children
@@ -40,11 +66,10 @@ class ProductsController < ApplicationController
     
   end
 
-  def edit
-    @product = Product.find(params[:id])
-  end
+ 
 
   def update
+    
     @product = Product.find(params[:id])
     if @product.update_attributes(product_params)
       redirect_to :root

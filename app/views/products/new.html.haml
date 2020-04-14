@@ -9,6 +9,10 @@
   .products__items   
     = form_for @product do |f|
       #image-box
+        #previews
+          - if @product.persisted?
+            - @product.images.each_with_index do |image, i|
+              = image_tag image.image.url, data: { index: i }, width: "100", height: '100'
         = f.fields_for :images do |image|
           .js-file_group{"data-index" => "#{image.index}"}
             = image.file_field :image, class: 'js-file'
