@@ -7,8 +7,13 @@
       - else
         %li  
           = link_to 'お届け先住所登録', new_destination_path
-      %li
-        = link_to "クレジット情報", step4_signup_index_path
+
+      - if current_user.card
+        %li  
+          = link_to "クレジット情報", signup_path
+      - else
+        %li  
+          = link_to "クレジット登録", signup_index_path
       %li
         = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "Lists__right--btn"
   .mypage

@@ -2,7 +2,6 @@ class SignupController < ApplicationController
   require 'payjp'
 
   def create
-    
     @user = User.new()
 
     if @user.save
@@ -26,8 +25,33 @@ class SignupController < ApplicationController
       if @card.save
         redirect_to root_path
       else
-        redirect_to step4_signup_index_path 
+        redirect_to signup_index_path 
       end
     end
+
+
+    def destroy #PayjpとCardデータベースを削除します
+      card = Card.where(user_id: current_user.id).first
+      if card.blank?
+      else
+        Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
+        customer = Payjp::Customer.retrieve(card.customer_id)
+        customer.delete
+        card.delete
+      end
+      redirect_to root_path
+    end
+  
+    def show #Cardのデータpayjpに送り情報を取り出します
+      card = Card.where(user_id: current_user.id).first
+      if card.blank?
+        redirect_to root_path
+      else
+        Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
+        customer = Payjp::Customer.retrieve(card.customer_id)
+        @default_card_information = customer.cards.retrieve(card.card_id)
+      end
+    end
+
     
 end
