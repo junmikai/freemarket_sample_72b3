@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  before_action :set_product, only: [:destroy, :show]
+  before_action :set_product, only: [:destroy, :show, :edit, :update]
   
   def show
   end
@@ -17,8 +17,6 @@ class ProductsController < ApplicationController
   end
 
   def edit
-    
-    @product = Product.find(params[:id])
 
     # grandchild_category = @product.category
     # child_category = grandchild_category.parent
@@ -69,8 +67,6 @@ class ProductsController < ApplicationController
  
 
   def update
-    
-    @product = Product.find(params[:id])
     if @product.update_attributes(product_params)
       redirect_to :root
     else
