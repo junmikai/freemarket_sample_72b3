@@ -71,7 +71,7 @@
                 -# = @child_category.name
                 -# = @grandchild_category.name
                 //親カテゴリーのセレクトボックスの生成
-                = f.select :category_id, options_for_select(@category_parent_array.map{|category|[category.name, category.id]}), {prompt: "選択してください"}, {class: 'listing-select-wrapper__box--select', id: 'parent_category'}
+                = f.select :category_id, options_for_select(@category_parent_array.map{|category|[category.name, category.id]}), {}, {class: 'listing-select-wrapper__box--select', id: 'parent_category'}
                 -# = f.select :category_id, options_for_select(@category_children_array.map{|category|[category.name, category.id]}), {selected: @product.category_id}, {class: 'listing-select-wrapper__box--select', id: 'parent_category'}
                 -# = f.select :category_id, options_for_select(@category_grandchildren_array.map{|category|[category.name, category.id]}), {selected: @product.category_id}, {class: 'listing-select-wrapper__box--select', id: 'parent_category'}
                 -# -# = f.select :category, @category_children_array, {}, {class: 'listing-select-wrapper__box--select', id: 'parent_category'}
