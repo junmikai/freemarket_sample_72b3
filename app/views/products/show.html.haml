@@ -85,28 +85,12 @@
               = link_to '編集', edit_product_path(@product), method: :get, class: "productbtn--edit"
             %li
               = link_to '削除', product_path(@product), method: :delete, class: "productbtn--destroy"
-        - else
+        - elsif user_signed_in?
           %button.commentBtn 
             = link_to '購入する', edit_buy_path(@product.id), class:"commentBtn"
-          -# .productcheck
-          -#   購入内容の確認
-          -#   .productcheck__item
-          -#     = image_tag src="noimage.png"
-          -#     .productcheck__item--detail
-          -#       .productcheck__item--detail__name
-          -#         商品名
-          -#       .productcheck__item--detail__name
-          -#         テックキャンプ転職コース
-          -#       %hr/
-          -#     .productcheck__item--detail
-          -#       .productcheck__item--detail__name
-          -#         支払い金額
-          -#       .productcheck__item--detail__name
-          -#         ¥ 700,000（税込)
-          -#       %hr/
-          -#     .productcheckbtn
-          -#       %button.commentBtn 
-          -#         購入する
+        - else
+          購入するには会員になる必要があります
+          
           
 
     %ul.links
