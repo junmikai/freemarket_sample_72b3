@@ -18,8 +18,8 @@ class ProductsController < ApplicationController
 
   def edit
 
-    # grandchild_category = @product.category
-    # child_category = grandchild_category.parent
+    grandchild_category = @product.category
+    child_category = grandchild_category.parent
 
 
     @category_parent_array = []
@@ -69,6 +69,7 @@ class ProductsController < ApplicationController
   def update
     if @product.update_attributes(product_params)
       redirect_to :root
+      flash[:notice] = "商品を編集しました！"
     else
       render action: :edit
     end
