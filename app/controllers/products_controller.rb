@@ -20,8 +20,8 @@ class ProductsController < ApplicationController
     
     @product = Product.find(params[:id])
 
-    grandchild_category = @product.category
-    child_category = grandchild_category.parent
+    # grandchild_category = @product.category
+    # child_category = grandchild_category.parent
 
 
     @category_parent_array = []
