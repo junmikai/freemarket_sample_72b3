@@ -88,6 +88,8 @@
         - elsif user_signed_in?
           %button.commentBtn 
             = link_to '購入する', edit_buy_path(@product.id), class:"commentBtn"
+        - else
+          購入するには会員になる必要があります
           
           
 
