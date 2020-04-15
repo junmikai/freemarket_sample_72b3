@@ -11,6 +11,7 @@ class DestinationsController < ApplicationController
       flash[:notice] = "情報を登録しました"
     else
       redirect_to new_destination_path, flash: { error: @destination.errors.full_messages }
+
     end
   end
 
@@ -18,6 +19,7 @@ class DestinationsController < ApplicationController
   end
 
   def edit 
+    # @destination = Destination.find(params[:id])
   end
 
 

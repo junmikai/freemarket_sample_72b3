@@ -31,9 +31,20 @@
               %tr
                 %th カテゴリー
                 %td 
-                  = link_to "#" do
-                    = @product.category.name
-                  %br
+                  -if @product.category.parent
+                    -if @product.category.parent.parent
+                      = link_to "#" do
+                        = @product.category.parent.parent.name
+                      %br
+                      = link_to "#" do
+                        = @product.category.parent.name
+                      %br
+                    - else
+                      = link_to "#" do
+                        = @product.category.parent.name
+                  -if @product.category
+                    = link_to "#" do
+                      = @product.category.name
               %tr
                 %th ブランド
                 %td 
@@ -80,25 +91,25 @@
         - else
           %button.commentBtn 
             = link_to '購入する', edit_buy_path(@product.id), class:"commentBtn"
-          .productcheck
-            購入内容の確認
-            .productcheck__item
-              = image_tag src="noimage.png"
-              .productcheck__item--detail
-                .productcheck__item--detail__name
-                  商品名
-                .productcheck__item--detail__name
-                  テックキャンプ転職コース
-                %hr/
-              .productcheck__item--detail
-                .productcheck__item--detail__name
-                  支払い金額
-                .productcheck__item--detail__name
-                  ¥ 700,000（税込)
-                %hr/
-              .productcheckbtn
-                %button.commentBtn 
-                  購入する
+          -# .productcheck
+          -#   購入内容の確認
+          -#   .productcheck__item
+          -#     = image_tag src="noimage.png"
+          -#     .productcheck__item--detail
+          -#       .productcheck__item--detail__name
+          -#         商品名
+          -#       .productcheck__item--detail__name
+          -#         テックキャンプ転職コース
+          -#       %hr/
+          -#     .productcheck__item--detail
+          -#       .productcheck__item--detail__name
+          -#         支払い金額
+          -#       .productcheck__item--detail__name
+          -#         ¥ 700,000（税込)
+          -#       %hr/
+          -#     .productcheckbtn
+          -#       %button.commentBtn 
+          -#         購入する
           
 
     %ul.links

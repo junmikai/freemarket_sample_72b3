@@ -22,13 +22,6 @@ Rails.application.routes.draw do
   resources :destinations, only: [:new, :create, :show, :edit, :update]
   resources :users, only: [:show]
 
-  resources :signup do
-    collection do
-      get 'step1'
-      get 'step2'
-      get 'step3'
-      get 'step4' # ユーザーおよびカードの登録
-      get 'done' # 登録完了後のページ
-    end
-  end
+  resources :signup
+  
 end

@@ -1,0 +1,14 @@
+.cardDelete
+  .cardDelete__number
+    %p (カード番号)
+    %p.border 4242424242424242
+  .cardDelete__period
+    %p (有効期限)
+    %p.border 2020年12月
+  .cardDelete__security
+    %p (CVC)
+    %p.border 123
+
+  = form_tag(signup_path, method: :DELETE, id: 'charge-form', name: "inputForm") do
+    %input{ type: "hidden", name: "card_id", value: "" }
+    %button.btn_mail 削除する

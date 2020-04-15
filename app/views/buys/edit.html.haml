@@ -1,7 +1,7 @@
 .wrapper
   .header
     .header__image
-      = image_tag src="/assets/logo.png", size: "185x49"
+      = link_to image_tag('logo.png', size:"180x60"),root_path, class: "logo"
 
   .main
     .main__contents
@@ -31,51 +31,50 @@
 
       %hr/
       .main__contents__address
-        - if current_user.card == true
+        - if current_user.card
           .main__contents__address__method 
             支払い方法
             %br/
-            -# Cardのデータ取得の記述！！
-            クレジットカード
-            ************0000
-            有効期限 12 / 24
-            -# ！！
-            = link_to "#", class: "main__contents__address__link" do
-              >>変更する
+          = "************4242"
+          = link_to signup_path, class: "main__contents__address__link" do
+            >>確認する
         - else
           .main__contents__address__method 
             支払い方法
             %br/
           .main__contents__address__method
-            = link_to "#", class: "main__contents__address__link" do
+            = link_to signup_index_path, class: "main__contents__address__link" do
               >>クレジットカードを登録する
 
       %hr/
       .main__contents__posts
-        - if current_user.destination == true
+        - if current_user.destination 
           .main__contents__posts__shipping-address 
             配送先住所
-            -# ↓あとで実装
-            -# = @destination.post_code
-            -# %br/
-            -# = @destination.prefecture
-            -# = @destination.city
-            -# = @destination.address
-            -# = @destination.building_name
-            -# %br/
-            -# = @destination.family_name 
-            -# = @destination.first_name
+            %br/
+            = @destination.post_code
+            %br/
+            = @destination.prefecture.name
+            %br/
+            = @destination.city
+            %br/
+            = @destination.address
+            %br/
+            = @destination.building_name
+            %br/
+            = @destination.family_name 
+            = @destination.first_name
           .main__contents__posts__method
-            = link_to "#", class: "main__contents__address__link" do
+            = link_to edit_destination_path, class: "main__contents__address__link" do
               >>変更する
         - else
           .main__contents__posts__shipping-address 
-            配送先住所
           .main__contents__posts__method
-            = link_to "#", class: "main__contents__address__link" do
+            = link_to new_destination_path, class: "main__contents__address__link" do
               >>配送先の登録
 
-      %hr/
-      .main__contents__send
-      = form_for @product, :url => {controller: "buys", action: "update"} do |f|
-        = f.submit value: "購入する", class: "btn-icon"
+      - if current_user.card and current_user.destination 
+        %hr/
+        .main__contents__send
+        = form_for @product, :url => {controller: "buys", action: "update"} do |f|
+          = f.submit value: "購入する", class: "btn-icon"
