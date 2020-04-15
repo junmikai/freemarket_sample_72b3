@@ -16,6 +16,18 @@ class ProductsController < ApplicationController
       end
   end
 
+  def create
+    # binding.pry
+    @product = Product.create(product_params)
+    if @product.save
+      redirect_to :root
+      flash[:notice] = "商品を出品しました！"
+    else
+      redirect_to new_product_path, flash: { error: @product.errors.full_messages }
+    end
+    
+  end
+
   def edit
 
     grandchild_category = @product.category
@@ -26,18 +38,24 @@ class ProductsController < ApplicationController
     Category.where(ancestry: nil).each do |parent|
       @category_parent_array << parent
     end
-    
-    # @category_children_array = []
-    # # binding.pry
-    # Category.where(ancestry: child_category.siblings).each do |children|
-    #   @category_children_array << children
-    # end
+  end
 
-    # @category_grandchildren_array = []
-    # Category.where(ancestry: child_category.subtree).each do |grandchildren|
-    #   @category_grandchildren_array << grandchildren
-    # end
-    
+  def update
+    if @product.update_attributes(product_params)
+      redirect_to :root
+      flash[:notice] = "商品を編集しました！"
+    else
+      # render action: :edit
+      redirect_to edit_product_path, flash: { error: @product.errors.full_messages }
+    end
+  end
+
+
+  def destroy
+    @product.destroy
+    flash[:notice] = "商品を削除しました！"
+    redirect_to root_path
+
   end
 
   def get_category_children
@@ -51,35 +69,6 @@ class ProductsController < ApplicationController
     @category_grandchildren = Category.find("#{params[:child_id]}").children
   end
 
-
-  def create
-    # binding.pry
-    @product = Product.create(product_params)
-    if @product.save
-      redirect_to :root
-      flash[:notice] = "商品を出品しました！"
-    else
-      redirect_to new_product_path, flash: { error: @product.errors.full_messages }
-    end
-    
-  end
-
- 
-
-  def update
-    if @product.update_attributes(product_params)
-      redirect_to :root
-      flash[:notice] = "商品を編集しました！"
-    else
-      render action: :edit
-    end
-  end
-
-
-  def destroy
-    @product.destroy
-    redirect_to root_path
-  end
 
   def set_product
     @product = Product.find(params[:id])
