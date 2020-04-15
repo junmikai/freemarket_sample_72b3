@@ -91,4 +91,14 @@ class ProductsController < ApplicationController
     params.require(:product).permit(:name, :price, :description, :status, :shipping_cost, :shipping_days, :category_id, :prefecture_id, :distination_id, images_attributes:[:image, :_destroy, :id]).merge(user_id: current_user.id)
   end
   
+  # 親カテゴリーのセレクトボックス
+  # name = "product[parent_id]"
+  # "product" => {:category_id => "選択された親カテゴリーのID", :name, :price}
+
+  # 孫カテゴリーのセレクトボックス
+  # name = "product[category_id]"
+  # "category__id" => "選択された孫カテゴリーのID"
+
+
+
 end

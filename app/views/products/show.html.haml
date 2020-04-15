@@ -32,10 +32,10 @@
                 %th カテゴリー
                 %td 
                   = link_to "#" do
-                    = @product.category.name
+                    = @product.category.parent.parent.name
                   %br
                   = link_to "#" do
-                    = @product.category.name
+                    = @product.category.parent.name
                   %br
                   = link_to "#" do
                     = @product.category.name
