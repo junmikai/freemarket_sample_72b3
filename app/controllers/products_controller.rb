@@ -29,16 +29,16 @@ class ProductsController < ApplicationController
       @category_parent_array << parent
     end
     
-    # @category_children_array = []
-    # # binding.pry
-    # Category.where(ancestry: child_category.siblings).each do |children|
-    #   @category_children_array << children
-    # end
+    @category_children_array = []
+    # binding.pry
+    Category.where(ancestry: child_category.siblings).each do |children|
+      @category_children_array << children
+    end
 
-    # @category_grandchildren_array = []
-    # Category.where(ancestry: child_category.subtree).each do |grandchildren|
-    #   @category_grandchildren_array << grandchildren
-    # end
+    @category_grandchildren_array = []
+    Category.where(ancestry: child_category.subtree).each do |grandchildren|
+      @category_grandchildren_array << grandchildren
+    end
     
   end
 
