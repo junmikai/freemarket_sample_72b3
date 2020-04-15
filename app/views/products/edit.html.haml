@@ -67,16 +67,16 @@
           .listing-product-detail__category
             .listing-select-wrapper
               .listing-select-wrapper__box
-                -# = @parent_category
-                -# = @child_category.name
-                -# = @grandchild_category.name
                 //親カテゴリーのセレクトボックスの生成
                 = f.select :category_id, options_for_select(@category_parent_array.map{|category|[category.name, category.id]}), {}, {class: 'listing-select-wrapper__box--select', id: 'parent_category'}
-                -# = f.select :category_id, options_for_select(@category_children_array.map{|category|[category.name, category.id]}), {selected: @product.category_id}, {class: 'listing-select-wrapper__box--select', id: 'parent_category'}
-                -# = f.select :category_id, options_for_select(@category_grandchildren_array.map{|category|[category.name, category.id]}), {selected: @product.category_id}, {class: 'listing-select-wrapper__box--select', id: 'parent_category'}
-                -# -# = f.select :category, @category_children_array, {}, {class: 'listing-select-wrapper__box--select', id: 'parent_category'}
+
+
+     
                 %i.fas.fa-chevron-down.listing-select-wrapper__box--arrow-down
-                -# = f.collection_select :category_id, Category.all, :id, :name
+
+
+
+
 
         %br/
         %br/
@@ -105,7 +105,5 @@
         .value__name 販売価格
         .value__required 必須
         = f.text_field :price, placeholder: "入力してください", class: "value__prize"
-        .value__commission 販売手数料（10%）
-        .value__profit 販売利益
         = f.submit root_path, value:"編集する",  class: "value__judgment"
       
