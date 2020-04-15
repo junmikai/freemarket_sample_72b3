@@ -31,14 +31,20 @@
               %tr
                 %th カテゴリー
                 %td 
-                  = link_to "#" do
-                    = @product.category.parent.parent.name
-                  %br
-                  = link_to "#" do
-                    = @product.category.parent.name
-                  %br
-                  = link_to "#" do
-                    = @product.category.name
+                  -if @product.category.parent
+                    -if @product.category.parent.parent
+                      = link_to "#" do
+                        = @product.category.parent.parent.name
+                      %br
+                      = link_to "#" do
+                        = @product.category.parent.name
+                      %br
+                    - else
+                      = link_to "#" do
+                        = @product.category.parent.name
+                  -if @product.category
+                    = link_to "#" do
+                      = @product.category.name
               %tr
                 %th ブランド
                 %td 
