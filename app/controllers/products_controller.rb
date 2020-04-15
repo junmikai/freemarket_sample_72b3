@@ -16,6 +16,32 @@ class ProductsController < ApplicationController
       end
   end
 
+  def edit
+    
+    @product = Product.find(params[:id])
+
+    # grandchild_category = @product.category
+    # child_category = grandchild_category.parent
+
+
+    @category_parent_array = []
+    Category.where(ancestry: nil).each do |parent|
+      @category_parent_array << parent
+    end
+    
+    # @category_children_array = []
+    # # binding.pry
+    # Category.where(ancestry: child_category.siblings).each do |children|
+    #   @category_children_array << children
+    # end
+
+    # @category_grandchildren_array = []
+    # Category.where(ancestry: child_category.subtree).each do |grandchildren|
+    #   @category_grandchildren_array << grandchildren
+    # end
+    
+  end
+
   def get_category_children
     #選択された親カテゴリーに紐付く子カテゴリーの配列を取得
     @category_children = Category.find_by(id: "#{params[:parent_name]}", ancestry: nil).children
@@ -40,7 +66,16 @@ class ProductsController < ApplicationController
     
   end
 
-  def edit
+ 
+
+  def update
+    
+    @product = Product.find(params[:id])
+    if @product.update_attributes(product_params)
+      redirect_to :root
+    else
+      render action: :edit
+    end
   end
 
 
@@ -54,7 +89,17 @@ class ProductsController < ApplicationController
   end
   private
   def product_params
-    params.require(:product).permit(:name, :price, :description, :status, :shipping_cost, :shipping_days, :category_id, :prefecture_id, :distination_id, images_attributes:[:image]).merge(user_id: current_user.id)
+    params.require(:product).permit(:name, :price, :description, :status, :shipping_cost, :shipping_days, :category_id, :prefecture_id, :distination_id, images_attributes:[:image, :_destroy, :id]).merge(user_id: current_user.id)
   end
   
+  # 親カテゴリーのセレクトボックス
+  # name = "product[parent_id]"
+  # "product" => {:category_id => "選択された親カテゴリーのID", :name, :price}
+
+  # 孫カテゴリーのセレクトボックス
+  # name = "product[category_id]"
+  # "category__id" => "選択された孫カテゴリーのID"
+
+
+
 end
