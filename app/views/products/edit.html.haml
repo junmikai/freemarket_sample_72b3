@@ -69,12 +69,10 @@
               .listing-select-wrapper__box
                 //親カテゴリーのセレクトボックスの生成
                 = f.select :category_id, options_for_select(@category_parent_array.map{|category|[category.name, category.id]}), {}, {class: 'listing-select-wrapper__box--select', id: 'parent_category'}
-                -# = f.select :category_id, options_for_select(@category_children_array.map{|category|[category.name, category.id]}), {}, {class: 'listing-select-wrapper__box--select', id: 'parent_category'}
-                -# = f.select :category_id, options_for_select(@category_grandchildren_array.map{|category|[category.name, category.id]}), {}, {class: 'listing-select-wrapper__box--select', id: 'parent_category'}
-                -# = f.select :category, @category_children_array, {}, {class: 'listing-select-wrapper__box--select', id: 'parent_category'}
-                -# %i.fas.fa-chevron-down.listing-select-wrapper__box--arrow-down
-                -# = f.collection_select :category_id, Category.all, :id, :name
-                -# = f.select :category_id, Category.all.map { |category| [category.name, category.id] }
+
+     
+                %i.fas.fa-chevron-down.listing-select-wrapper__box--arrow-down
+
 
 
 
@@ -84,13 +82,13 @@
 
         .product__name 商品の状態
         .product__required 必須
-        = f.select :status, [['新品、未使用'], ['未使用に近い'], ["目立った傷や汚れなし"], ["やや傷や汚れあり"], ["傷や汚れあり"], ["全体的に状態が悪い"]], {selected: 1}, {class: "product__status"}
+        = f.select :status, [['新品、未使用'], ['未使用に近い'], ["目立った傷や汚れなし"], ["やや傷や汚れあり"], ["傷や汚れあり"], ["全体的に状態が悪い"]], {}, {class: "product__status"}
         
 
       .items__delivery
         .delivery__name 配送料の負担
         .delivery__required 必須
-        = f.select :shipping_cost, [['送料込み(出品者負担)'], ['着払い(購入者負担)']], {selected: 1}, {class: "delivery__cost"}
+        = f.select :shipping_cost, [['送料込み(出品者負担)'], ['着払い(購入者負担)']], {}, {class: "delivery__cost"}
         %br/
         %br/
         .delivery__name 発送元の地域
@@ -100,7 +98,7 @@
         %br/
         .delivery__name 発送までの日数
         .delivery__required 必須
-        = f.select :shipping_days, [['1~2日で発送'], ['2~3日で発送'], ["4~7日で発送"]], {selected: 1}, {class: "delivery__days"}
+        = f.select :shipping_days, [['1~2日で発送'], ['2~3日で発送'], ["4~7日で発送"]], {}, {class: "delivery__days"}
 
       .items__value
         .value__name 販売価格
