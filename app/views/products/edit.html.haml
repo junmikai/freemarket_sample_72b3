@@ -69,6 +69,9 @@
               .listing-select-wrapper__box
                 //親カテゴリーのセレクトボックスの生成
                 = f.select :category_id, options_for_select(@category_parent_array.map{|category|[category.name, category.id]}), {}, {class: 'listing-select-wrapper__box--select', id: 'parent_category'}
+
+
+     
                 %i.fas.fa-chevron-down.listing-select-wrapper__box--arrow-down
 
 
