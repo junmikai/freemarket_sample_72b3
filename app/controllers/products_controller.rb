@@ -73,6 +73,7 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
     if @product.update_attributes(product_params)
       redirect_to :root
+      flash[:notice] = "商品を編集しました！"
     else
       render action: :edit
     end
