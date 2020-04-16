@@ -26,8 +26,9 @@ class DestinationsController < ApplicationController
   def update
     if @destination.update_attributes(destination_params)
       redirect_to :root
+      flash[:notice] = "お届け先を編集しました！"
     else
-      render action: :edit
+      render action: :edit, lash: { error: @product.errors.full_messages }
     end
   end
 
