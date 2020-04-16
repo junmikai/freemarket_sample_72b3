@@ -62,11 +62,24 @@ hr {
     color: #fff;
     font-size: 14px;
     vertical-align: top;
+  }
 
+  select#user_birth_day_1i{
+    margin-top:20px;
+    font-size:30px;
+  }
 
+  select#user_birth_day_2i{
+    margin-top:20px;
+    font-size:30px;
+  }
 
+  select#user_birth_day_3i{
+    margin-top:20px;
+    font-size:30px;
+  }
 
-
-
+  label{
+    font-size:20px;
   }
 }

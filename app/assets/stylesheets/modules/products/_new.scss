@@ -99,11 +99,11 @@ $form_height:50px;
       
       
     .items__product {
-      height: 600px;
       width: 700px;
       background-color:#ffffff;
-      border:solid 1px #f8f8f8;
+
       padding: 30px 40px 0px 40px;
+
       position: relative;
       .product__name {
         font-weight: bold;
@@ -145,8 +145,8 @@ $form_height:50px;
   
     .items__delivery {  
       height: 450px;
-      border:solid 1px #f8f8f8; 
       padding: 50px 40px 40px 40px;
+      margin-top:50px;
       .delivery__cost {
         @include delivery_form
       }

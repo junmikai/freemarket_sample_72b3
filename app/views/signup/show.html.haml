@@ -1,0 +1,7 @@
+.cardDelete
+  .cardDelete__number
+    クレジットカード情報削除してよろしいですか？
+
+  = form_tag(signup_path, method: :DELETE, id: 'charge-form', name: "inputForm") do
+    %input{ type: "hidden", name: "card_id", value: "" }
+    %button.btn_mail 削除する
