@@ -3,7 +3,6 @@
   - @product.errors.full_messages.each do |message|
     %li= message
   .products__items 
-    
     = form_for @product do |f|
       #image-box
         #previews
@@ -13,6 +12,19 @@
         = f.fields_for :images do |image|
           .js-file_group{"data-index" => "#{image.index}"}
             = image.file_field :image, class: 'js-file'
+
+          .image__pictures
+      -#   #image-box
+      -#     = f.fields_for :images do |image|
+      -#       .img-label
+      -#         =image.label :image do
+      -#           .image__picture
+      -#             .js-file_group{"data-index" => "#{image.index}"}
+      -#               = image.file_field :image, class: 'js-file' do
+      -#                 .image__picture__btn 
+      -#                   = icon('fas', 'camera')
+      -#                 .image__picture__sentence
+      -#                   画像を登録する
             
       .items__product
         .product__name 商品名
