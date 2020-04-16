@@ -9,5 +9,4 @@ class Product < ApplicationRecord
   validates :name, :price, :description, :status, :shipping_cost, :shipping_days, :prefecture_id, :category_id, presence: true
   validates_associated :images
   validates :images, presence: true
-
 end
