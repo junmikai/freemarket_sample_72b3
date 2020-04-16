@@ -60,6 +60,8 @@ ActiveRecord::Schema.define(version: 2020_04_02_064105) do
     t.string "shipping_days", null: false
     t.string "prefecture_id", null: false
     t.integer "category_id", null: false
+    t.integer "parent_name"
+    t.integer "child_id"
     t.integer "destination_id"
     t.integer "user_id"
     t.datetime "created_at", null: false

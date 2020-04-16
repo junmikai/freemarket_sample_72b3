@@ -1,6 +1,7 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:destroy, :show, :edit, :update]
-  
+  # before_action :get_category_children, only: :edit
+  # before_action :get_category_grandchildren, only: :edit
   def show
   end
 
@@ -19,6 +20,7 @@ class ProductsController < ApplicationController
   def edit
     @product = Product.find(params[:id])
     grandchild_category = @product.category
+    child_category = grandchild_category.parent
     
     
     @category_parent_array = []
@@ -26,32 +28,21 @@ class ProductsController < ApplicationController
       @category_parent_array << parent
     end
     
-    child_category = grandchild_category.parent
-    @category_children_array = [1, 2, 3]
-    Category.where(ancestry: child_category.siblings).each do |children|
+    @category_children_array = []
+    Category.where(ancestry: child_category.ancestry).each do |children|
       @category_children_array << children
     end
     # binding.pry
     @category_grandchildren_array = []
-    Category.where(ancestry: child_category.subtree).each do |grandchildren|
+    Category.where(ancestry: grandchild_category.ancestry).each do |grandchildren|
       @category_grandchildren_array << grandchildren
     end
     
   end
   
   
-  def get_category_children
-    #選択された親カテゴリーに紐付く子カテゴリーの配列を取得
-    @category_children = Category.find_by(id: "#{params[:parent_name]}", ancestry: nil).children
-  end
-
-  # 子カテゴリーが選択された後に動くアクション
-  def get_category_grandchildren
-  #選択された子カテゴリーに紐付く孫カテゴリーの配列を取得
-    @category_grandchildren = Category.find("#{params[:child_id]}").children
-  end
-
-
+  
+  
   def create
     # binding.pry
     @product = Product.create(product_params)
@@ -63,9 +54,9 @@ class ProductsController < ApplicationController
     end
     
   end
-
- 
-
+  
+  
+  
   def update
     if @product.update_attributes(product_params)
       redirect_to :root
@@ -74,15 +65,25 @@ class ProductsController < ApplicationController
       render action: :edit
     end
   end
-
-
+  
+  
   def destroy
     @product.destroy
     redirect_to root_path
   end
-
+  
   def set_product
     @product = Product.find(params[:id])
+  end
+  def get_category_children
+    #選択された親カテゴリーに紐付く子カテゴリーの配列を取得
+    @category_children = Category.find_by(id: "#{params[:parent_name]}", ancestry: nil).children
+  end
+
+  # 子カテゴリーが選択された後に動くアクション
+  def get_category_grandchildren
+  #選択された子カテゴリーに紐付く孫カテゴリーの配列を取得
+    @category_grandchildren = Category.find("#{params[:child_id]}").children
   end
   private
   def product_params

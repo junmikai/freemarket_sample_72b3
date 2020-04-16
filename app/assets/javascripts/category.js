@@ -14,7 +14,7 @@ $(function(){
                           <select class="listing-select-wrapper__box--select" id="child_category" name="category_id">
                             <option value="---" data-category="---">---</option>
                             ${insertHTML}
-                          <select>
+                          </select>
                           <i class='fas fa-chevron-down listing-select-wrapper__box--arrow-down'></i>
                         </div>
                       </div>`;
@@ -29,7 +29,7 @@ $(function(){
                                 <select class="listing-select-wrapper__box--select" id="grandchild_category" name="product[category_id]">
                                   <option value="---" data-category="---">---</option>
                                   ${insertHTML}
-                                <select>
+                                </select>
                                 <i class='fas fa-chevron-down listing-select-wrapper__box--arrow-down'></i>
                               </div>
                             </div>`;

@@ -9,6 +9,8 @@ class CreateProducts < ActiveRecord::Migration[5.2]
       t.string  :shipping_days, null: false
       t.string  :prefecture_id, null: false
       t.integer :category_id, null: false, foreign_key: true
+      t.integer :parent_name
+      t.integer :child_id
       t.integer :destination_id, foreign_key: true
       # t.string  :judgment
       # t.integer :shipping_id, foreign_key: true

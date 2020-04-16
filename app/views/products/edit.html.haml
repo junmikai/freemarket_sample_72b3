@@ -68,10 +68,10 @@
             .listing-select-wrapper
               .listing-select-wrapper__box
                 //親カテゴリーのセレクトボックスの生成
-                = f.select :category_id, options_for_select(@category_parent_array.map{|category|[category.name, category.id]}), {}, {class: 'listing-select-wrapper__box--select', id: 'parent_category'}
-                = f.select :category_id, options_for_select(@category_children_array.map{|category|[category.name, category.id]}), {}, {class: 'listing-select-wrapper__box--select', id: 'child_category'}
-                = f.select :category_id, options_for_select(@category_grandchildren_array.map{|category|[category.name, category.id]}), {}, {class: 'listing-select-wrapper__box--select', id: 'grandchild_category'}
-
+                -# = f.select :category_id, @category_parent_array.map{|category|[category.name, category.id]}, {}, {class: 'listing-select-wrapper__box--select', id: 'parent_category'}
+                -# = f.select :category_id, options_for_select(@category_children_array.map{|category|[category.name, category.id]}), {}, {class: 'listing-select-wrapper__box--select', id: 'child_category'}
+                -# = f.select :category_id, options_for_select(@category_grandchildren_array.map{|category|[category.name, category.id]}), {}, {class: 'listing-select-wrapper__box--select', id: 'grandchild_category'}
+                = f.select :category_id, options_for_select(Category.where(ancestry: nil).map{|t|[t[:name], t[:id],{}]}, @product.category.parent.parent.id), {}, {class: "box__input", id: "parent_category"}
                 %i.fas.fa-chevron-down.listing-select-wrapper__box--arrow-down
                 -# = f.select :category_id, options_for_select(@category_children_array.map{|category|[category.name, category.id]}), {}, {class: ‘listing-select-wrapper__box--select’, id: ‘parent_category’}
                 -# = f.select :category_id, options_for_select(@category_grandchildren_array.map{|category|[category.name, category.id]}), {}, {class: ‘listing-select-wrapper__box--select’, id: ‘parent_category’}
@@ -79,7 +79,6 @@
                 -# %i.fas.fa-chevron-down.listing-select-wrapper__box--arrow-down
                 -# = f.collection_select :category_id, Category.all, :id, :name
                 -# = f.select :category_id, Category.all.map { |category| [category.name, category.id] }
-
 
 
 
