@@ -8,10 +8,12 @@ body {
 }
 
 .header {
-  padding: 0 215px;
+  padding: 10px 215px 0px 215px;
   width: 100%;
   margin: auto;
+  font-weight: normal;
   &__inner {
+    border-bottom: #cccccc69 1px solid;
     padding-top: 15px;
     width: 100%;
     &--head {
@@ -36,11 +38,12 @@ body {
           width: 36px;
           padding: 5px;
           position: absolute;
-
+          
         }
       }
     }
     &--foot {
+      margin-bottom: 10px;
       .Lists {
         display: flex;
         justify-content: space-between;

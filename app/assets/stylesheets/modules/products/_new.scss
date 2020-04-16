@@ -18,12 +18,7 @@ $form_height:50px;
 .products {
   background-color: #f8f8f8;
   font-weight: normal;
-  &__logo {
-    background-color: #f8f8f8;
-    height: 100px;
-    text-align: center;
-    padding-top: 30px;
-  }
+  padding: 60px;
   &__items {
     margin:  0 auto; 
     background-color: #ffffff;

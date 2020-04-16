@@ -14,7 +14,7 @@ body{
 
 
 .wraper{
-  padding: 100px 200px;
+  padding: 30px 200px;
   display: flex;
   justify-content: space-around;
   .side-bar {
@@ -49,14 +49,15 @@ body{
     height:1050px;
     background-color:#ffff;
     &__title{
-      text-align: center;
       padding-top:50px;
       border-bottom: 1px solid #f5f5f5;
       display: flex;
       margin-left: 280px;
       &--text {
+        text-align: center;
         font-size:30px;
         margin: 0 30px 30px 0;
+        color: gray;
       }
       &--edit {
         font-size:18px;

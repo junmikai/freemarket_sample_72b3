@@ -1,6 +1,8 @@
 .wraper
   .side-bar
     %ul
+      %li
+        = link_to "マイページ", user_path(current_user), class: "Lists__right--btn"
       - if current_user.destination
         %li  
           = link_to "お届け先住所", destination_path
@@ -18,7 +20,6 @@
         = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "Lists__right--btn"
   .mypage
     .mypage__title--text
-
       マイページ
     .userdatas
       .userdata
