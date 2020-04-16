@@ -62,7 +62,13 @@
             .listing-select-wrapper
               .listing-select-wrapper__box
                 //親カテゴリーのセレクトボックスの生成
-                = f.select :category_id, options_for_select(@category_parent_array.map{|category|[category.name, category.id]}), {}, {class: 'listing-select-wrapper__box--select', id: 'parent_category'}
+                = f.select :category_id, options_for_select(Category.where(ancestry: nil).map{|t|[t[:name], t[:id],{}]}, @product.category.parent.parent.id), {}, {class: 'listing-select-wrapper__box--select', id: 'parent_category'}
+              
+
+              
+                = f.select :category_id, options_for_select(@product.category.parent.parent.children.map{|t|[t[:name], t[:id],{}]}, @product.category.parent.id), {}, {class: 'listing-select-wrapper__box--select', id: 'children_wrapper'}
+
+                = f.select :category_id, options_for_select(@product.category.parent.children.map{|t|[t[:name], t[:id],{}]}, @product.category.id), {}, {class: 'listing-select-wrapper__box--select', id: 'grandchildren_wrapper'}
 
 
      
