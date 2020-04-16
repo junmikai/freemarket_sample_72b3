@@ -23,9 +23,8 @@ class ProductsController < ApplicationController
       redirect_to :root
       flash[:notice] = "商品を出品しました！"
     else
-      redirect_to new_product_path, flash: { error: @product.errors.full_messages }
+      redirect_to new_product_path, flash[:alert] = { error: @product.errors.full_messages }
     end
-    
   end
 
   def edit
@@ -46,7 +45,7 @@ class ProductsController < ApplicationController
       flash[:notice] = "商品を編集しました！"
     else
       # render action: :edit
-      redirect_to edit_product_path, flash: { error: @product.errors.full_messages }
+      redirect_to edit_product_path, flash[:alert] = { error: @product.errors.full_messages }
     end
   end
 
