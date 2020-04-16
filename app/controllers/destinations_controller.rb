@@ -32,8 +32,9 @@ class DestinationsController < ApplicationController
   end
 
   def set_destination
-    @destination = Destination.find(params[:id])
+    @destination = current_user.destination 
   end
+  
   private 
   def destination_params
       params.require(:destination).permit(:family_name, :first_name, :family_name_kana, :first_name_kana, :post_code, :prefecture_id, :city, :address, :building_name, :phone_number).merge(user_id: current_user.id)

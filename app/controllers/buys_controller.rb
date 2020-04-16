@@ -1,11 +1,13 @@
 class BuysController < ApplicationController
   before_action :set_product, only: [:edit, :update]
+
+
   def edit
-    @user = User.find(params[:id])
+    @user = current_user
 
     
     if current_user.destination 
-      @destination = Destination.find(params[:id])
+      @destination = @user.destination 
     end
     
   end
