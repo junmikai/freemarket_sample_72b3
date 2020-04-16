@@ -71,6 +71,7 @@
                 = f.select :category_id, options_for_select(@category_parent_array.map{|category|[category.name, category.id]}), {}, {class: 'listing-select-wrapper__box--select', id: 'parent_category'}
                 = f.select :category_id, options_for_select(@category_children_array.map{|category|[category.name, category.id]}), {}, {class: 'listing-select-wrapper__box--select', id: 'child_category'}
                 = f.select :category_id, options_for_select(@category_grandchildren_array.map{|category|[category.name, category.id]}), {}, {class: 'listing-select-wrapper__box--select', id: 'grandchild_category'}
+
                 %i.fas.fa-chevron-down.listing-select-wrapper__box--arrow-down
                 -# = f.select :category_id, options_for_select(@category_children_array.map{|category|[category.name, category.id]}), {}, {class: ‘listing-select-wrapper__box--select’, id: ‘parent_category’}
                 -# = f.select :category_id, options_for_select(@category_grandchildren_array.map{|category|[category.name, category.id]}), {}, {class: ‘listing-select-wrapper__box--select’, id: ‘parent_category’}
