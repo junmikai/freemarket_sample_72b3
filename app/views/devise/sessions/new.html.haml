@@ -1,9 +1,5 @@
 .body
-.sessions-header
-  %h1
-  = link_to root_path, class: 'device-header__link' do
-    = image_tag ('logo.png'), alt: 'logo', class: 'device-header__link__image', height: '49', width: '185'
-    
+.sessions-header  
 .sessions-main
   = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
     .sessions-main__box  
