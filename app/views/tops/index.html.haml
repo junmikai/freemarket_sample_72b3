@@ -88,7 +88,7 @@
         = link_to "#", class: "title" do
           %h3.title__text 新規投稿商品
       .productLists 
-        - @products.each do |product|
+        - @products.last(5).each do |product|
           - if product.destination_id.nil?
             = link_to product_path(product.id), class: "productList" do
               .productList--img
