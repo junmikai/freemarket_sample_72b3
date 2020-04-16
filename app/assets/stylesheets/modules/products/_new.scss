@@ -28,16 +28,16 @@ $form_height:50px;
       position: relative; 
       height: 300px;
       border:solid 1px #f8f8f8;
+      padding: 40px;
       .image__name {
         font-weight: bold;
         float: left;
         display: flex justify-content;
         font-size: 13px;
-        margin: 24px 3px 0px 40px;
+        margin: 3px 5px 10px 0;
       }
       .image__required {
         display: flex;
-        margin-top: 22px;
         justify-content: center;
         align-items: center;
         color: #FFFFFF;
@@ -48,47 +48,46 @@ $form_height:50px;
         border-radius: 3px;
       }
       .image__upload {
-        padding: 25px 0px 0 40px;
         font-size: 12px;
       }
       .image__pictures {
         display: flex;
-        padding: 0 40px;
-        .img-label {
+        #image-box {
           height: 150px;
-          width: 25%;
-          background-color: #f8f8f8;
+          width: 150px;
           position: relative;
-          margin: 2px;
-          label{
-            width:100px;
+          // padding-top: 30px;
+          border:dotted 1px #CCCCCC;
+          font-size: 20px;
+          justify-content: center;
+          text-align: center;
+          line-height: 10px;
+          background-color: #f8f8f8;
+          &__btn {
+            position: absolute;
+            position: absolute;
+            top: 28%;
+            left: 34%;
+            font-size: 50px;
+          }
+          &__sentence {
+            padding-top: 5px;
+            font-size: 12px;
+            position: absolute;
+            top: 100px;
+            left: 38px;
+          }
+          .img-label {
             height: 100%;
-            
-            input {
-              display: none;
-            }
-            .image__picture {
+            width: 100%;
+            position: relative;
+            margin: 2px;
+            label{
+              width:100%;
               height: 100%;
-              position: relative;
-              padding-top: 30px;
-              border:dotted 1px #CCCCCC;
-              font-size: 20px;
-              justify-content: center;
-              text-align: center;
-              line-height: 10px;
-              &__btn {
-                position: absolute;
-                position: absolute;
-                top: 28%;
-                left: 34%;
-                font-size: 50px;
-              }
-              &__sentence {
-                padding-top: 5px;
-                font-size: 12px;
-                position: absolute;
-                top: 100px;
-                left: 38px;
+              
+              input {
+                display: none;
               }
             }
           }

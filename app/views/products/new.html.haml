@@ -4,16 +4,26 @@
     %li= message
   .products__items 
     = form_for @product do |f|
-      #image-box
-        #previews
-          - if @product.persisted?
-            - @product.images.each_with_index do |image, i|
-              = image_tag image.image.url, data: { index: i }, width: "100", height: '100'
-        = f.fields_for :images do |image|
-          .js-file_group{"data-index" => "#{image.index}"}
-            = image.file_field :image, class: 'js-file'
-
-          .image__pictures
+      .items__image
+        .image__name 出品画像
+        .image__required 必須
+        %br/
+        .image__upload 最大４枚までアップロードできます 
+        .image__pictures
+          #image-box
+            #previews
+              - if @product.persisted?
+                - @product.images.each_with_index do |image, i|
+                  = image_tag image.image.url, data: { index: i }, width: "100", height: '100'
+            = f.fields_for :images do |image|
+              =image.label :image, class: "img-label" do
+                .js-file_group{"data-index" => "#{image.index}"}
+                  = image.file_field :image, class: 'js-file'
+              -# .image__picture__btn 
+              -#   = icon('fas', 'camera')
+              -# .image__picture__sentence
+              -#   画像を登録する
+          -# .image__pictures
       -#   #image-box
       -#     = f.fields_for :images do |image|
       -#       .img-label
