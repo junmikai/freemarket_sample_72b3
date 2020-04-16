@@ -1,6 +1,6 @@
 class TopsController < ApplicationController
 
   def index
-    @products = Product.all
+    @products = Product.includes(:user)
   end
 end
