@@ -1,7 +1,4 @@
 .products
-  %ul
-  - @product.errors.full_messages.each do |message|
-    %li= message
   .products__items 
     
     = form_for @product do |f|
@@ -13,6 +10,7 @@
         = f.fields_for :images do |image|
           .js-file_group{"data-index" => "#{image.index}"}
             = image.file_field :image, class: 'js-file'
+            
             
       .items__product
         .product__name 商品名

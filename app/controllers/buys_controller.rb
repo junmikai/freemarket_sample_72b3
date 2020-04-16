@@ -24,7 +24,7 @@ class BuysController < ApplicationController
       redirect_to :root
       flash[:notice] = "商品を購入しました！"
     else
-      render "buy_edit", flash: { error: @product.errors.full_messages }
+      render "buy_edit", flash[:alert] = { error: @product.errors.full_messages }
     end
   end
 
