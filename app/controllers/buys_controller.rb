@@ -3,6 +3,7 @@ class BuysController < ApplicationController
   def edit
     @user = User.find(params[:id])
 
+    
     if current_user.destination 
       @destination = Destination.find(params[:id])
     end
@@ -28,6 +29,7 @@ class BuysController < ApplicationController
   def set_product
     @product = Product.find(params[:id])
   end
+
   private
   def product_params
     params.require(:product).permit(:name, :price, :description, :status, :shipping_cost, :shipping_days, :category_id, :prefecture_id, :distination_id, images_attributes:[:image]).merge(user_id: current_user.id)
