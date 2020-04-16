@@ -1,8 +1,5 @@
 .wrapper
   .header
-    .header__image
-      = link_to image_tag('logo.png', size:"180x60"),root_path, class: "logo"
-
   .main
     .main__contents
       %h2.main__contents__head 
@@ -48,10 +45,11 @@
 
       %hr/
       .main__contents__posts
+        配送先住所
+        %br/
         - if current_user.destination 
           .main__contents__posts__shipping-address 
-            配送先住所
-            %br/
+            
             = @destination.post_code
             %br/
             = @destination.prefecture.name

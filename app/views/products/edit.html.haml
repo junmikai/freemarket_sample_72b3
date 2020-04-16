@@ -1,10 +1,4 @@
 .products
-  .products__logo
-    .logo
-      =link_to image_tag('logo.png', size:"160x40"),root_path
-      -# %ul
-      -# - @product.errors.full_messages.each do |message|
-      -#   %li= message
   .products__items
     = form_for @product do |f|
       #image-box
