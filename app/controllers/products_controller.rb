@@ -26,6 +26,7 @@ class ProductsController < ApplicationController
       flash[:alert] = "必須情報を入力してください"
       redirect_to new_product_path
   end
+end
 
   def edit
 
