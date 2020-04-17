@@ -10,7 +10,8 @@ class DestinationsController < ApplicationController
       redirect_to destination_path(@destination.id)
       flash[:notice] = "情報を登録しました"
     else
-      redirect_to new_destination_path, flash[:alert] = { error: @destination.errors.full_messages }
+      flash[:alert] = "必須情報を入力してください"
+      redirect_to new_destination_path, 
 
     end
   end
@@ -28,7 +29,8 @@ class DestinationsController < ApplicationController
       redirect_to :root
       flash[:notice] = "お届け先を編集しました！"
     else
-      render action: :edit, lash: { error: @product.errors.full_messages }
+      flash[:alert] = "必須情報を入力してください"
+      render action: :edit
     end
   end
 
