@@ -13,7 +13,7 @@ class ImageUploader < CarrierWave::Uploader::Base
 
 
 
-  process resize_to_fill: [220, 160, "center"]
+  process resize_to_fill: [170, 110, "center"]
 
   storage :fog
 
