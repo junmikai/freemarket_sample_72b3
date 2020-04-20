@@ -11,7 +11,7 @@ class DestinationsController < ApplicationController
       flash[:notice] = "情報を登録しました"
     else
       flash[:alert] = "必須情報を入力してください"
-      redirect_to new_destination_path, 
+      redirect_to new_destination_path
 
     end
   end
